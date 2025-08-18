@@ -1,4 +1,7 @@
 #logoImage {
+    height: 400px;
+    width: 400px;
     mask-image: url(logo.png);
     mask-repeat: no-repeat;
+    mask-size: cover;
 }
