@@ -1,1 +1,4 @@
-/* */
+#logoImage {
+    mask-image: url(logo.png);
+    mask-repeat: no-repeat;
+}
