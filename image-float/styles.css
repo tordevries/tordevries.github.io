@@ -9,10 +9,12 @@ article {
     border: 1em solid grey;
     background-color: white;
     padding: 3em;
+    overflow: hidden;
 }
 
 #dogImage {
     height: 400px;
-    float: right;
+    float: left;
     shape-outside: url("dog-mask-transparent.png");
+    padding: 1em;
 }
