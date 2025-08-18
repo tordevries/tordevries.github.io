@@ -1,1 +1,20 @@
-/* styles for float */
+/* styles for example */
+
+body {
+    background-color: lightgrey;
+}
+
+article {
+    margin: 3em;
+    border: 1em solid grey;
+    background-color: white;
+    padding: 3em;
+}
+
+#dogImage {
+    background-image: url('dog-background.jpg');
+    background-size: cover;
+    width: 30%;
+    height: auto;
+    float: right;
+}
