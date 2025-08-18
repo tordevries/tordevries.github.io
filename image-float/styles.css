@@ -14,5 +14,5 @@ article {
 #dogImage {
     height: 400px;
     float: right;
-    shape-outside: url("dog-mask.png");
+    shape-outside: url("dog-mask-transparent.jpg");
 }
