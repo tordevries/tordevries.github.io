@@ -14,7 +14,8 @@ article {
 #dogImage {
     background-image: url('dog-background.jpg');
     background-size: cover;
-    width: 30%;
-    height: auto;
+    width: 300px;
+    height: 400px;
     float: right;
+    shape-outside: url("dog-mask.png");
 }
