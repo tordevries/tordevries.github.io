@@ -23,3 +23,8 @@ article {
     shape-outside: url("dog-mask-transparent.png");
     padding: 0 1em;
 }
+
+.thumbnail {
+    width: 80px;
+    height: auto;
+}
