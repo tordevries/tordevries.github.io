@@ -1,3 +1,13 @@
+body {
+    background-color: darkgray;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
 #logoImage {
     height: 400px;
     width: 400px;
