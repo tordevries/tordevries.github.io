@@ -8,6 +8,7 @@ p {
     line-height: 1.7em;
 }
 
+/* frame the content */
 article {
     width: 70%;
     margin: 3em auto;
@@ -17,14 +18,14 @@ article {
     overflow: hidden;
 }
 
-#dogImage {
-    height: 400px;
-    float: left;
-    shape-outside: url("dog-mask-transparent.png");
-    padding: 0 1em;
-}
-
 .thumbnail {
     width: 80px;
     height: auto;
+}
+
+#dogImage {
+    height: 400px;
+    float: left;
+    shape-outside: url("dog-mask-transparent.png"); /* determine text wrap shape based on transparent / alpha shape in image */
+    padding: 0 1em;
 }
