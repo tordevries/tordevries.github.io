@@ -1,0 +1,275 @@
+/* CSS styling for the multipage demo */
+
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lato&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #f2efe6;
+	font-family: 'Lato', sans-serif;
+}
+
+
+
+/* ******************************************************* header */
+
+header {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-image: url("images/home-daniele-levis-pelusi-YQrUzrsRNes-unsplash.jpg");
+	background-size: cover;
+	background-position: center center;
+}
+
+body.fire header {
+	background-image: url("images/elements/fire-ricardo-gomez-angel--98jVaVuGv0-unsplash.jpg");
+}
+
+body.water header {
+	background-image: url("images/elements/water-jong-marshes-79mNMAvSORg-unsplash.jpg");
+}
+
+body.earth header {
+	background-image: url("images/elements/earth-chris-bair-tZep6zlTugg-unsplash.jpg");
+}
+
+body.air header {
+	background-image: url("images/elements/air-tatiana-zhukova-6bYVoUH1DkQ-unsplash.jpg");
+}
+
+body.winter header {
+	background-image: url("images/seasons/winter-ian-schneider-dqMxDqdhg_4-unsplash.jpg");
+}
+
+body.spring header {
+	background-image: url("images/seasons/spring-tomoko-uji-kxvn1ogpTtE-unsplash.jpg");
+	background-position: bottom center;
+}
+
+body.summer header {
+	background-image: url("images/seasons/summer-sean-oulashin-KMn4VEeEPR8-unsplash.jpg");
+}
+
+body.fall header {
+	background-image: url("images/seasons/fall-matt-uuBBew6g2jM-unsplash.jpg");
+	background-position: bottom center;
+}
+
+
+header h1 {
+	position: absolute;
+	top: 0.5em;
+	left: 0.5em;
+	padding: 0;
+	margin: 0;
+	font-size: 4rem;
+	color: white;
+	line-height: 1em;
+}
+
+body.elements header h1 {
+	font-family: Lato, Arial, sans-serif;
+}
+
+body.seasons header h1 {
+	font-family: Garamond, Times, serif;
+}
+
+body.spring header h1 {
+	color: green;
+}
+
+body.fall header h1 {
+	color: darkred;
+}
+
+
+
+@media screen and (orientation: landscape) {
+
+	header {
+		height: 50vh;
+	}
+
+	body.home header {
+		height: 100vh;
+	}
+
+	header h1 {
+		top: auto;
+		bottom: 1em;
+		left: 1em;
+	}
+
+	header aside {
+		width: auto;
+	}
+
+}
+
+
+
+/* ******************************************************* content */
+
+main {
+	position: relative;
+	width: 100%;
+	height: auto;
+	overflow: auto;
+	padding: 2em;
+}
+
+section {
+	float: left;
+	width: 100%;
+}
+
+section li {
+	margin-bottom: 0.5em;
+	font-size: 1.5rem;
+}
+
+h1, h2 {
+	text-transform: uppercase;
+	font-family: 'Dela Gothic One', cursive;
+}
+
+
+/* ******************************************************* nav */
+
+nav {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 3rem;
+	background-color: #000;
+	z-index: 1;
+	overflow: hidden;
+	transition: height 0.5s;
+}
+
+nav ul {
+	position: relative;
+	list-style: none;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+nav a {
+	font-family: Lato, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	white-space: nowrap;
+	width: 100%;
+	display: block;
+}
+
+#mobileNav {
+	display: block;
+	padding: 0.3em 0 0 0.4em;
+	font-size: 1.5rem;
+	color: #fff;
+}
+
+nav > ul > li:hover {
+	background-color: #999;
+}
+
+nav > ul > li:hover > ul > li:hover {
+	background-color: #777;
+}
+
+body.elements li.elements {
+	border-bottom: 4px solid #fff;
+}
+
+body.seasons li.seasons {
+	border-bottom: 4px solid #fff;
+}
+
+body.fall li.fall a {
+	font-weight: bold;
+	color: darkred;
+}
+
+
+/* mobile or portrait menu layout */
+@media screen and (orientation: portrait) {
+
+	nav:hover {
+		height: 90vh;
+	}
+
+	nav li {
+		padding: 0.5em 0.5em 0.5em 1em;
+	}
+
+} /* end @media orientation: portrait */
+
+
+/* desktop or landscape menu layout */
+@media screen and (orientation: landscape) {
+
+	#mobileNav {
+		display: none;
+	}
+
+	nav:hover {
+		overflow: visible;
+	}
+
+	nav li {
+		float: left;
+		padding: 1rem;
+		display: block;
+		position: relative;
+		height: 3rem;
+	}
+
+	nav > ul > li > ul {
+		position: absolute;
+		display: block;
+		top: 3rem;
+		left: 0;
+		background-color: #999;
+		display: none;
+	}
+
+	nav > ul > li:hover > ul {
+		display: block;
+	}
+
+	nav > ul > li > ul > li {
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
