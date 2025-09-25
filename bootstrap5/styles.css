@@ -1,0 +1,65 @@
+/* custom CSS for Bootstrap 5 demo page */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+container {
+    font-family: Lora, serif;
+}
+
+h1, h2, h3 {
+    font-family: Anton, sans-serif;
+}
+
+/************** carousel items */
+
+#carouselOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#carouselOverlay h1 {
+    text-transform: uppercase;
+    font-size: 10rem;
+    color: #fffa;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+/******************** hero banner */
+
+#heroBanner {
+    height: 75vh;
+}
+
+/* override B5's .bg-primary class */
+#heroBanner.bg-primary {
+    background-image: url('images/geranimo-qzgN45hseN0-unsplash.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: gray;
+}
+
+
+
+/******************** rows and columns */
+
+.row > div {
+    border-left: 1px solid #000;
+    background-color: #ccc;
+    padding: 1rem;
+}
