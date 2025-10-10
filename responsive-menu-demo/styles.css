@@ -32,4 +32,5 @@ nav {
     display: block;
     font-size: 2rem;
     color: var(--nav-text-color);
+    padding: 0.1em 0 0 0.3em;
 }
