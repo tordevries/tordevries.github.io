@@ -33,6 +33,7 @@ nav {
     font-size: 2rem;
     color: var(--nav-text-color);
     padding: 0.1em 0 0 0.3em;
+    max-height: 2rem;
 }
 
 nav ul {
@@ -44,7 +45,12 @@ nav ul {
 }
 
 nav > ul {
+    max-height: 0;
+    overflow: hidden;
+}
 
+nav.clicked > ul {
+    max-height: 90vh;
 }
 
 nav > ul > li {
