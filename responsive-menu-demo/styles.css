@@ -47,6 +47,7 @@ nav ul {
 nav > ul {
     max-height: 0;
     overflow: hidden;
+    transition: max-height 0.5s;
 }
 
 nav.clicked > ul {
@@ -70,6 +71,13 @@ nav > ul > li > a {
 nav > ul > li > ul {
     margin: 0 0 0 1rem;
     background-color: inherit;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+nav > ul > li.clicked > ul {
+    max-height: 40vh;
 }
 
 nav > ul > li > ul > li {
