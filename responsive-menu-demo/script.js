@@ -40,9 +40,7 @@ document.addEventListener("DOMContentLoaded", function(){
   
   // close nav if someone clicks outside nav
   document.querySelector("html").addEventListener("click", function(e) {
-    console.log("1");
-    if ( !e.target.closest("nav") && document.querySelector("nav").classList.contains("clicked") ) {
-        console.log("2");
+    if ( !e.target.closest("nav") ) {
       clickNav(true);
     }
   });
