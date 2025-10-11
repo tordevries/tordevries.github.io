@@ -98,11 +98,11 @@ nav a {
     color: var(--nav-text-color);
 }
 
-nav li:hover {
+nav > ul > li > ul > li:hover {
     background-color: var(--nav-hover-bkgd-color);
 }
 
-nav li:hover a {
+nav > ul > li > ul > li:hover a {
     color: var(--nav-hover-text-color);
 }
 
@@ -120,6 +120,7 @@ nav li:hover a {
 
     nav > ul > li {
         float: left;
+        margin: 0.5rem;
     }
 
     nav > ul > li a {
@@ -140,6 +141,7 @@ nav li:hover a {
 
     nav > ul > li > ul li {
         margin: 0; 
+        white-space: nowrap;
     }
 
     nav > ul > li > a::after {
