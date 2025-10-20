@@ -1,0 +1,75 @@
+/* styles for big screen scrolling hash link page */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth; /* tells the browser to move things smoothly */
+}
+
+body {
+    overflow: visible; /* set to hidden to prevent user scrolling */
+}
+
+/* style the <main> tag 3x the height and width of the screen, with absolute
+   positioning, and lay out its internal <section> elements on a 3x3 grid */
+main {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* ignore code editor errors on this */
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+/* make all the sections full screen and padded */
+section {
+    width: 100vw;
+    height: 100vh;
+    padding: 5rem;
+    font-size: 2rem;
+}
+
+/* set the colors for the 9 sections */
+#A1 { background-color: darkred; }
+#A2 { background-color: red; }
+#A3 { background-color: pink; }
+
+#B1 { background-color: darkblue; }
+#B2 { background-color: blue; }
+#B3 { background-color: lightblue; }
+
+#C1 { background-color: darkgreen; }
+#C2 { background-color: green; }
+#C3 { background-color: lightgreen; }
+
+
+/* define the nav as a square white shape with a fixed position in the bottom left corner,
+   which uses a 3x3 grid to arrange its internal elements */
+nav {
+    position: fixed;
+    z-index: 1;
+    width: 10vw;
+    height: 10vw;
+    padding: 1rem;
+    background-color: #fff;
+    bottom: 3vw;
+    left: 3vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* ignore code editor errors on this */
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+/* style all the a links in the nav as blocks with padding and color */
+nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+}

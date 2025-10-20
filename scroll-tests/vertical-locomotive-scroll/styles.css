@@ -1,0 +1,96 @@
+/* Empire State Building Vertical Scroll -- Basic */
+
+/* load fonts Limelight and Titillium Web from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Titillium+Web:wght@300&display=swap');
+
+
+* {
+    box-sizing: border-box; /* set box-sizing to make dimensions primary */
+	padding: 0; /* remove default padding from every element */
+	margin: 0; /* remove default margin from every element */
+}
+
+html, body {
+	font-family: "Titillium Web", sans-serif;
+}
+
+/* eliminate default padding from content elements */
+h1, h2, p {
+	padding: 0;
+	margin: 0;
+}
+
+/* 1 section of 200vh + 5 sections of 100vh == 600vh with a tall background photo of the building */
+main {
+    height: 600vh;
+    background-image: url("/html/scroll-tests/images/empire-state-building.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+/* all sections are positioned relative and have a full-page height of 100vh */
+section {
+    position: relative;
+    height: 100vh;
+    /* border-bottom: dashed 1px #fff5; /* comment in to see faint division lines between sections */
+}
+
+#section1 {
+    height: 200vh;
+}
+
+/* content divs within the sections are positioned absolutely to the top and right, almost half the page wide */
+section > .content {
+    position: absolute;
+    width: 42vw;
+    top: 20vh;
+    right: min(4vw, calc( 4vw * 3 * var(--progress) ) ); /* uses the Locomotive Scroll added variable "--progress" to calculate right position */
+    opacity: calc( 8 * var(--progress) ); /* uses the Locomotive Scroll added variable "--progress" to calculate opacity */
+}
+
+#section1 > .content,
+#section5 > .content {
+    right: 4vw; /* no variable scrolling on the first section */
+    opacity: 1.0; /* no variable opacity on the first section */
+}
+
+/* paragraph tags are given a size and padding */
+section > .content > p {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+/* position the "scroll down" instructions at the bottom of the screen, aligned with .content */
+section > .instructions {
+    position: absolute;
+    bottom: 102vh;
+    right: 4vw;
+    width: 42vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #000;
+    padding-left: 1rem; /* to align with paragraphs */
+    opacity: calc(1 - (5 * var(--progress) ) ); /* uses the Locomotive Scroll added variable "--progress" to calculate opacity */
+}
+
+/* transform the header and paragraph text in the title block */
+#section1 p,
+#section1 h1 {
+    text-transform: uppercase;
+}
+
+/* set font, size, and spacing on the h1 tag */
+#section1 h1 {
+    font-size: 7rem;
+    line-height: 6rem;
+    font-family: Limelight, serif;
+    margin-left: -0.4rem; /* due to the size and design of the font, bump it left a tiny bit for visual alignment */
+    padding-left: 1rem; /* to align with paragraphs */
+}
+
+/* change the color in the last section due to the background image */
+#section5 p {
+    background-color: #cfddebbb;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Empire State Building: Skrollr: Just The Apple</title>
+	
+	<!-- external and internal JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js" integrity="sha512-A2+khatRDWHUE2VUtN4xUTkr1nc4YfDBw9Sg3ea6x0aRPfpcYieDZji4D2edDHy/yF5NsYzP7kL8sSM8s5EqCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="text/javascript">
+	
+        // JavaScript to wait for HTML + CSS to load, then initialize skrollr
+	    window.addEventListener("load", function() {
+    	    var s = skrollr.init();
+        });
+        
+	</script>
+	
+	<!-- external CSS -->
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div id="movingApple"
+        data-0="transform:rotate(0deg); top:5vh; left:-10vw; font-size:12px;"
+        data-1000="transform:rotate(0deg); top:5vh; left:13vw; font-size:16px;"
+        data-2000="transform:rotate(0deg); top:45vh; left:13vw; font-size:70px;"
+        data-3000="transform:rotate(-720deg); top:45vh; left:13vw; font-size:70px;"
+        data-3600="transform:rotate(-720deg); top:45vh; left:13vw; font-size:12px;"
+        data-4000="transform:rotate(-720deg); top:45vh; left:-10vw; font-size:12px;"
+        >
+        &#127822;
+    </div>
+
+</body>
+</html>
+
+

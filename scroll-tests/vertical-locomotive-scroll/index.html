@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Empire State Building: Locomotive Scroll</title>
+
+	<!-- external CSS and JS to load Locomotive Scroll -->
+	<link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+	<script>
+	    
+        // JavaScript to wait for HTML + CSS to load
+	    window.addEventListener("load", function() {
+            const locomotiveScroll = new LocomotiveScroll(); // initalize locomotive scroll
+        });
+
+	</script>
+
+    <!-- css for this page -->
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <main>
+        
+        <section id="section1"><!-- the content is divided into sections that are styled to be full-screen -->
+        
+            <div class="content"
+                data-scroll 
+                data-scroll-speed="-.5" 
+                data-scroll-offset="0%, 0%"
+                data-scroll-css-progress
+                >
+                <p>The</p>
+                <h1>Empire State Building</h1>
+            </div>
+            
+            <div class="instructions" 
+                data-scroll 
+                data-scroll-css-progress
+                >
+                Scroll Down
+            </div>
+            
+        </section>
+        
+        
+        
+        <section id="section2">
+            
+            <div class="content"
+                data-scroll 
+                data-scroll-speed="-.5" 
+                data-scroll-css-progress
+                data-scroll-offset="-20%, -20%">
+                <p>The Empire State Building was completed in 1931. Its name is from "Empire State", the nickname of the state of New York.</p>
+            </div>
+            
+            <div class="apple" style="position: relative; font-size: 3rem; left: 20%; color: #fff; width: 2rem;"
+                data-scroll 
+                data-scroll-speed="1">&#127822;</div>
+                
+            <div class="apple" style="position: relative; font-size: calc(2rem * (4 * var(--progress) ) ); left: 40%; color: #fff; width: 2rem;"
+                data-scroll 
+                data-scroll-speed=".8"
+                data-scroll-offset="-50%, 0%"
+                data-scroll-css-progress>&#127822;</div>
+                
+        </section>
+        
+        
+        
+        <section id="section3">
+            
+            <div class="content"
+                data-scroll 
+                data-scroll-speed="-.5" 
+                data-scroll-repeat
+                data-scroll-css-progress
+                data-scroll-offset="-20%, -20%">
+                <p>The building has a roof height of 1,250 feet (380 m) and stands a total of 1,454 feet (443.2 m) tall, including its antenna. It was the world's tallest building until 1970, and today is the world's 54th tallest building.</p>
+            </div>
+            
+            <div class="apple" style="position: relative; font-size: 2rem; left: 20%; color: #fff; width: 2rem;"
+                data-scroll 
+                data-scroll-speed=".5">&#127822;</div>
+                
+            <div class="apple" style="position: relative; font-size: 4rem; left: 40%; color: #fff; width: 2rem;"
+                data-scroll 
+                data-scroll-speed="1.5"
+                data-scroll-offset="0%, 0%">&#127822;</div>
+                
+        </section>
+        
+        
+        
+        <section id="section4">
+            
+            <div class="content"
+                data-scroll 
+                data-scroll-speed="-.5" 
+                data-scroll-repeat
+                data-scroll-css-progress
+                data-scroll-offset="-20%, -20%">
+                <p>Floors 1 through 85 contain over 2 million square feet (200,500 m<sup>2</sup>) of commercial and office space. The 86th floor contains an observatory.</p>
+                <p>Another 16 floors are part of the spire, with a second observatory on the 102nd floor.</p>
+            </div>
+            
+        </section>
+        
+        
+        
+        <section id="section5">
+            
+            <div class="content"
+                data-scroll 
+                data-scroll-speed="-.5" 
+                data-scroll-repeat
+                data-scroll-css-progress
+                data-scroll-offset="-20%, -20%">
+                <p>As a world-famous symbol of New York City, the building has been named as one of the Seven Wonders of the Modern World by the American Society of Civil Engineers.</p>
+            </div>
+            
+        </section>
+    
+    </main>
+
+</body>
+</html>
+
+

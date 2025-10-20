@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Empire State Building: Skrollr</title>
+	
+	<!-- external and internal JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+	<script type="text/javascript">
+	
+        // JavaScript to wait for HTML + CSS to load, then initialize skrollr
+	    window.addEventListener("load", function() {
+    	    var s = skrollr.init();
+        });
+        
+	</script>
+	
+	<!-- external CSS -->
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div id="movingApple"
+        data-0="transform:rotate(0deg); top:5vh; left:-10vw; font-size:12px;"
+        data-1000="transform:rotate(0deg); top:5vh; left:13vw; font-size:16px;"
+        data-2000="transform:rotate(0deg); top:45vh; left:13vw; font-size:70px;"
+        data-3000="transform:rotate(-720deg); top:45vh; left:13vw; font-size:70px;"
+        data-3600="transform:rotate(-720deg); top:45vh; left:13vw; font-size:12px;"
+        data-4000="transform:rotate(-720deg); top:45vh; left:-10vw; font-size:12px;"
+        >
+        &#127822;
+    </div>
+
+<main>
+    
+    <section id="section1">
+        <div class="content">
+            <div>
+                <p>The</p>
+                <h1>Empire State Building</h1>
+            </div>
+        </div>
+        <div class="instructions" data-0="opacity:1.0" data-100="opacity:0">
+            Scroll Down
+        </div>
+    </section>
+
+    
+    <section id="section2">
+        <div class="content" data-0="opacity:0;transform:translate(0px,0px);" data-700="opacity:0;transform:translate(0px,0px);" data-1000="opacity:1;transform:translate(0px,0px);" data-1600="opacity:1;transform:translate(0px,600px);" data-1700="opacity:0;transform:translate(0px,600px);">
+            <p>The Empire State Building was completed in 1931. Its name is from "Empire State", the nickname of the state of New York.</p>
+        </div>
+    </section>
+    
+    <section id="section3">
+        <div class="content" data-0="opacity:0;transform:translate(0px,0px);" data-1700="opacity:0;transform:translate(0px,0px);" data-2000="opacity:1;transform:translate(0px,0px);" data-2500="opacity:1;transform:translate(0px,500px);" data-2600="opacity:0;transform:translate(0px,500px);">
+            <p>The building has a roof height of 1,250 feet (380 m) and stands a total of 1,454 feet (443.2 m) tall, including its antenna. It was the world's tallest building until 1970, and today is the world's 54th tallest building.</p>
+        </div>
+    </section>
+    
+    <section id="section4">
+        <div class="content" data-0="opacity:0;transform:translate(0px,0px);" data-2600="opacity:0;transform:translate(0px,0px);" data-2900="opacity:1;transform:translate(0px,0px);" data-3600="opacity:1;transform:translate(0px,700px);" data-3700="opacity:0;transform:translate(0px,700px);">
+            <p>Floors 1 through 85 contain over 2 million square feet (200,500 m<sup>2</sup>) of commercial and office space. The 86th floor contains an observatory. Another 16 floors are part of the spire, with a second observatory on the 102nd floor.</p>
+        </div>
+    </section>
+    
+    <section id="section5">
+        <div class="content" data-0="opacity:0;transform:translate(0px,0px);" data-3700="opacity:0;transform:translate(0px,0px);" data-4000="opacity:1;transform:translate(0px,0px);" data-4400="opacity:1;transform:translate(0px,400px);" >
+            <p>As a world-famous symbol of New York City, the building has been named as one of the Seven Wonders of the Modern World by the American Society of Civil Engineers.</p>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
+
+

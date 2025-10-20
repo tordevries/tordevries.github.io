@@ -1,0 +1,105 @@
+/* Empire State Building Vertical Scroll -- With Nav */
+
+/* load fonts Limelight and Titillium Web from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Titillium+Web:wght@300&display=swap');
+
+
+* {
+    box-sizing: border-box; /* set box-sizing to make dimensions primary */
+    scroll-behavior: smooth; /* make hash link scrolling smooth */
+    overflow: hidden; /* hides the scrollbars, forcing use of the navigation links */
+}
+
+html, body {
+	height: 100%; /* not strictly necessary except for add-on animation code */
+	padding: 0;
+	margin: 0;
+	font-family: "Titillium Web", sans-serif;
+}
+
+/* eliminate default padding from content elements */
+h1, h2, p {
+	padding: 0;
+	margin: 0;
+}
+
+/* five sections of 100vh equals 500vh with a tall background photo of the building */
+main {
+    height: 500vh;
+    background-image: url("/html/scroll-tests/images/empire-state-building.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+/* all sections are positioned relative and have a full-page height of 100vh */
+section {
+    position: relative;
+    height: 100vh;
+    /* border-bottom: dashed 1px #fff6; /* uncomment to reveal faint division lines between sections */
+}
+
+/* content divs within the sections are positioned absolutely to the top and right */
+section > .content {
+    position: absolute;
+    width: 42vw;
+    top: 20vh;
+    right: 4vw;
+}
+
+/* paragraph tags are given a size and padding */
+section > .content > p {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+/* define width and right-hand position of the controls to align with .content, but don't define the vertical attachment */
+section > .controls {
+    position: absolute;
+    width: 42vw;
+    right: 4vw;
+    padding: 1rem; 
+}
+
+/* now define the vertical attachment of the "next" nav */
+section > .controls.goNext {
+    bottom: 2vh;
+}
+
+/* now define the vertical attachment of the "previous" nav */
+section > .controls.goPrevious {
+    top: 2vh;
+}
+
+/* style the text of the control links */
+section > .controls > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #000;
+}
+
+section > .controls > a:hover {
+    color: #fff;
+}
+
+/* transform the header and paragraph text in the title block */
+#section1 p,
+#section1 h1 {
+    text-transform: uppercase;
+}
+
+/* set font, size, and spacing on the h1 tag */
+#section1 h1 {
+    font-size: 7rem;
+    line-height: 6rem;
+    font-family: Limelight, serif;
+    margin-left: -0.4rem; /* due to the size and design of the font, bump it left a tiny bit for visual alignment */
+    padding-left: 1rem; /* to align with the paragraphs */
+}
+
+/* change the color in the last section due to the background image */
+#section5 p {
+    background-color: #cfddebbb;
+    
+}

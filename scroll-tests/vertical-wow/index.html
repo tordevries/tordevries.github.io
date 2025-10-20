@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Empire State Building: Animate + Wow</title>
+	
+	<!-- add CSS and JavaScript for Wow animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.2/dist/wow.min.js"></script>
+	<script type="text/javascript">
+
+        // JavaScript to wait for HTML + CSS to load, then initialize Wow.js
+        window.addEventListener("load", function() {
+    	    wow = new WOW({ animateClass: 'animate__animated' });
+            wow.init();
+        });
+        
+	</script>
+
+	<!-- this page's CSS -->
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+<main>
+    
+    <section id="section1">
+        <div class="content wow animate__jello"><!-- for each element to animate, add the 'wow' class and then the Animate.css animation class -->
+            <p>The</p>
+            <h1>Empire State Building</h1>
+        </div>
+        <div class="instructions">
+            Scroll Down
+        </div>
+    </section>
+
+    <section id="section2">
+        <div class="content wow animate__backInRight">
+            <p>The Empire State Building was completed in 1931. Its name is from "Empire State", the nickname of the state of New York.</p>
+        </div>
+    </section>
+    
+    <section id="section3">
+        <div class="content wow animate__backInDown">
+            <p>The building has a roof height of 1,250 feet (380 m) and stands a total of 1,454 feet (443.2 m) tall, including its antenna. It was the world's tallest building until 1970, and today is the world's 54th tallest building.</p>
+        </div>
+    </section>
+    
+    <section id="section4">
+        <div class="content wow animate__swing">
+            <p>Floors 1 through 85 contain over 2 million square feet (200,500 m<sup>2</sup>) of commercial and office space. The 86th floor contains an observatory.</p>
+            <p>Another 16 floors are part of the spire, with a second observatory on the 102nd floor.</p>
+        </div>
+    </section>
+    
+    <section id="section5">
+        <div class="content wow animate__lightSpeedInLeft">
+            <p>As a world-famous symbol of New York City, the building has been named as one of the Seven Wonders of the Modern World by the American Society of Civil Engineers.</p>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
+
+
