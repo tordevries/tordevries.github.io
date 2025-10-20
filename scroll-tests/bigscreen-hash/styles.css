@@ -7,6 +7,10 @@
     scroll-behavior: smooth; /* tells the browser to move things smoothly */
 }
 
+html {
+    scroll-snap-type: both mandatory; /* request snapping to elements */
+}
+
 body {
     overflow: visible; /* set to hidden to prevent user scrolling */
 }
@@ -28,6 +32,7 @@ section {
     height: 100vh;
     padding: 5rem;
     font-size: 2rem;
+    scroll-snap-align: center; /* force scrolling to align with the center of these elements */
 }
 
 /* set the colors for the 9 sections */

@@ -8,28 +8,26 @@
     box-sizing: border-box; /* set box-sizing to make dimensions primary */
 }
 
-/* force window heights and hide scrollbars on the body tag */
+/* set spacing and font */
 html, body {
-	height: 100%;
 	padding: 0;
 	margin: 0;
 	font-family: "Titillium Web", sans-serif;
-	overflow: hidden;
+}
+
+html {
+    scroll-snap-type: x mandatory; /* force horizontal snapping to elements */
+}
+
+body {
+    overflow-x: auto; /* show horizontal scrollbars */
+	overflow-y: hidden; /* hide vertical scrollbars */
 }
 
 /* eliminate default padding from content elements */
 h1, h2, p {
 	padding: 0;
 	margin: 0;
-}
-
-/* give the main parent container width for horizontal scrolling and the sections */
-main {
-	position: absolute;
-    width: 100vw;
-	height: 100vh;
-	overflow: auto;
-	scroll-snap-type: x mandatory; /* force scrolling to snap to element */
 }
 
 /* all sections are positioned absolute and have a full-page height of 100vh, plus some background settings */
@@ -42,7 +40,7 @@ section {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-	scroll-snap-align: center;
+	scroll-snap-align: center; /* force scroll snap to center of sections */
     box-shadow: inset 1em 0 1em black, -1em 0 1em black;
 }
 
@@ -57,9 +55,8 @@ section {
 #section2 { background-image: url('images/kristjan-kotar--h15p84GY5k-unsplash.jpg'); }
 #section3 { background-image: url('images/greg-rosenke-8F47XWiUPrQ-unsplash.jpg'); }
 
-/* custom box-shadows for first and last slides */
+/* custom box-shadows for first slide */
 #section1 { box-shadow: -1em 0 1em black; }
-#section4 { box-shadow: 1em 0 1em black; }
 
 /* content divs within the sections are positioned absolutely to the top and right, almost half the page wide */
 section > .content {
