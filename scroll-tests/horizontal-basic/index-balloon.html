@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Balloon Floating</title>
+
+	<!-- internal CSS -->
+	<style>
+    * {
+        box-sizing: border-box; /* set box-sizing to make dimensions primary */
+        padding: 0; /* remove default padding from every element */
+        margin: 0; /* remove default margin from every element */
+      }
+
+      html, body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+          background-color: #00C0FF;
+      }
+
+      #balloon {
+          position: fixed; 
+          left: 10%; 
+          top: 30%; 
+          z-index: 1;
+          animation-name: balloonFloat;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+      }
+
+      @keyframes balloonFloat {
+          0% { transform: translateX(0px) translateY(0px); }
+          50%  { transform: translateX(0px) translateY(200px); }
+          100%   { transform: translateX(0px) translateY(0px); }    
+      }
+
+      #balloon img {
+          width: 80px; 
+      }
+  </style>>
+
+</head>
+<body>
+
+    <!-- the balloon element; check the CSS for positioning, animation, etc. -->
+    <div id="balloon">
+        <img src="../images/balloon.svg">
+    </div>
+
+</body>
+</html>
+
+
