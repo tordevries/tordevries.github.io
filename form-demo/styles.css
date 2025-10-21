@@ -38,8 +38,9 @@ textarea {
 }
 
 textarea {
-    width: 100%;
+    width: 97%;
     display: block;
+    margin-top: 5px;
 }
 
 button {
