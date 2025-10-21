@@ -28,3 +28,33 @@ tr td {
 tr:nth-child(odd) {
     background-color: lightgray;
 }
+
+input,
+select, 
+textarea {
+    padding: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    width: 100%;
+    display: block;
+}
+
+button {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+button:focus {
+    background-color: white;
+    color: #333;
+}
