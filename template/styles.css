@@ -1,0 +1,35 @@
+/* mobile-first breakpoints, adapted from Bootstrap 
+   extra small (XS) is the baseline */
+
+/* global: general CSS that applies to all layouts */
+
+
+
+
+/* layout: extra small — portrait phones, no media query */
+
+
+
+/* layout: small — tablets, 576px and up */
+@media (min-width: 576px) { 
+    /* CSS goes here */
+}
+
+
+/* layout: medium — laptops, 768px and up */
+@media (min-width: 768px) { 
+    /* CSS goes here */
+}
+
+
+/* layout: large — smaller desktops, 992px and up */
+@media (min-width: 992px) { 
+    /* CSS goes here */
+}
+
+
+/* layout: extra large — larger desktops, 1200px and up */
+@media (min-width: 1200px) { 
+    /* CSS goes here */
+}
+
