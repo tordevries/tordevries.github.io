@@ -1,0 +1,128 @@
+/* styles for TP02 - alternate version 4 */
+
+/* import two fonts from Google (Architects Daughter and Permanent Marker) */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Permanent+Marker&display=swap');
+
+/* set box model for the whole page */
+* {
+	box-sizing: border-box;
+}
+
+/* set background for the page */
+body {
+	background-color: #ccc;
+	background-image: url(bkgd-wood.jpg); /* image credit at end */
+	background-size: cover;
+}
+
+/* position the header as almost full-screen, using flexbox to center the h1 head tag */
+header {
+	display: block;
+	position: relative;
+	width: 100vw;
+	height: 95vh;
+	display: flex;
+	align-items: center; /* flexbox vertical alignment */
+}
+
+/* center with flexbox; set font family, size, color */
+header h1 {
+	flex-grow: 1;
+	text-align: center;
+	font-family: "Permanent Marker", script;
+	font-size: 5rem;
+	color: white;
+}
+
+/* set sections as "cards" with position, background, dimensions, padding, margin, shadow — and transitions for transform and shadow  */
+section {
+	position: relative;
+	display: block;
+	background-image: url(bkgd-paper.jpg); /* image credit at end */
+	background-size: cover;
+	background-color: #fff;
+	width: 40vw;
+	height: 25vw;
+	padding: 1rem;
+	margin: 0 auto 5rem auto;
+	overflow: hidden;
+	box-shadow: 5px 5px 10px #000;
+	transition: transform 0.5s, box-shadow 0.5s;
+}
+
+/* when hovered, rotate to 0 (no rotation) and increase scale very slightly */
+section:hover {
+	transform: rotate(0deg) scale(1.05);
+	box-shadow: 5px 10px 30px #000;
+}
+
+/* transforms and hovers for specific "cards", formatted for readability because tabs don't matter */
+
+#randomQuestion 			{ transform: rotate(-5deg)	scale(1); 		}
+#randomQuestion:hover 		{ transform: rotate(0deg) 	scale(1.05); 	}
+
+#boringFact 				{ transform: rotate(2deg) 	scale(1); 		}
+#boringFact:hover 			{ transform: rotate(0deg) 	scale(1.05); 	}
+
+#funnyJoke 					{ transform: rotate(-2deg) 	scale(1); 		}
+#funnyJoke:hover 			{ transform: rotate(0deg) 	scale(1.05); 	}
+
+#interestingArticle 		{ transform: rotate(-2deg) 	scale(1); 		}
+#interestingArticle:hover 	{ transform: rotate(0deg) 	scale(1.05); 	}
+
+#coolPic 					{ transform: rotate(3deg) 	scale(1); 		}
+#coolPic:hover 				{ transform: rotate(0deg) 	scale(1.05); 	}
+
+
+/* set h2 head fonts and margins */
+section h2 {
+	font-family: "Permanent Marker", script;
+	font-size: 2rem;
+	margin-top: 0;
+}
+
+/* set paragraph fonts */
+section p {
+	font-family: "Architects Daughter", serif;
+	font-size: 1.5rem;
+}
+
+/* size image to fit on "card"; float left */
+#coolPic img {
+	width: 50%;
+	height: auto;
+	float: left;
+	margin-right: 2rem;
+}
+
+
+
+
+
+
+
+/*
+
+image credits:
+
+wood board background:
+https://unsplash.com/photos/close-up-photo-of-green-planks-7_N1zLrY7ns
+
+paper:
+https://unsplash.com/photos/white-textile-on-brown-wooden-table-_kUxT8WkoeY
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

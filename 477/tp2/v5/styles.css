@@ -1,0 +1,108 @@
+/* styles for TP02 - alternate version 5 */
+
+/* import Rethink Sans font from Google with 400 and 700 weights, and italics */
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* set box model for the whole page */
+* {
+	box-sizing: border-box;
+}
+
+/* set font family and weight for the whole page */
+body {
+	font-family: "Rethink Sans", serif;
+	font-weight: 400;
+	font-size: 30px;
+	background-color: #777;
+}
+
+/* set font weight for headers, and convert to uppercase */
+h1, 
+h2 {
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 0;
+	line-height: 0.9em;
+}
+
+/* set both headers and sections to the same positioning, size, and background-color */
+header, 
+section {
+	position: absolute;
+	height: 70vmin; /* use special "vmin" unit which is always the lesser of vh or vw */
+	width: 70vmin; /* make a square */
+	left: calc( ( 100vw - 70vmin ) / 2 ); /* center absolutely by subtracting assigned object width from total screen width and dividing in half */
+	top: calc( ( 100vh - 70vmin ) / 2 ); /* center absolutely by subtracting assigned object height from total screen height and dividing in half */
+	background-color: #fff;
+	padding: 1rem;
+}
+
+/* use flexbox to center h1 head text in the header tag; adjust background color; set z-index */
+header {
+	display: flex;
+	align-items: center; /* flexbox vertical alignment */
+	background-color: black;
+	z-index: 1;
+}
+
+/* set font size, color, and centering; and flexbox centering */
+header h1 {
+	flex-grow: 1;
+	font-size: 10rem;
+	text-align: center;
+	color: white;
+}
+
+/* disable any positioning and sizing on the main tag parent so it doesn't interfere */
+main {
+	display: inline;
+}
+
+/* set z-index to behind the header tag; set low opacity and no shadow; set a transition */
+section {
+	opacity: 0.1;
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+	transition: opacity 0.5s, box-shadow 0.5s;
+	z-index: 0;
+}
+
+/* when hovering over a section, increase opacity, box-shadow, and z-index */
+section:hover {
+	opacity: 1.0;
+	box-shadow: 0 0 20px rgba(0,0,0,1);
+	z-index: 2;
+}
+
+section h2,
+section p, 
+section img {
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+section:hover h2,
+section:hover p,
+section:hover img {
+	opacity: 1;
+}
+
+/* carefully rotate all 6 question sections */
+#randomQuestion         { transform: rotate(-38deg); }
+#boringFact             { transform: rotate(-25deg); }
+#funnyJoke              { transform: rotate(-12deg); }
+#slangThatNeedsToGo     { transform: rotate(12deg); }
+#interestingArticle     { transform: rotate(25deg); }
+#coolPic                { transform: rotate(38deg); }
+
+/* resize image to fit in section */
+#coolPic img {
+	width: 100%;
+}
+
+
+
+
+
+
+
+

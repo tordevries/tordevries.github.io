@@ -1,0 +1,111 @@
+/* styles for TP02 - alternate version 3 */
+
+/* import two fonts from Google (Press Start 2P and Source Code Pro) with 300 and 700 weights */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro:wght@300;700&display=swap');
+
+/* set box model for the whole page */
+* {
+	box-sizing: border-box;
+}
+
+/* set font and background color for page, as well as increasing top padding while removing other spacing */
+body {
+	font-family: "Source Code Pro", sans-serif;
+	background-color: #e0dfd3;
+	padding: 15vh 0 0 0;
+	margin: 0;
+}
+
+/* set the background color to black and angle the whole header tag slightly, but 
+   make the header tag wider and taller, then position the header absolutely with
+   negative top and left values, so it correctly bleeds off the screen with the angle */
+header {
+	background-color: black;
+	transform: rotate(-1deg);
+	display: block;
+	position: absolute;
+	width: 120vw;
+	height: 12vh;
+	left: -10vw;
+	top: -3vh;
+}
+
+/* position the h1 tag absolutely from the bottom of its parent and a bit from
+   the left to counter the negative positioning of the parent due to the angle */
+header h1 {
+	font-family: "Press Start 2P", sans-serif;
+	color: white;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: absolute;
+	height: 2rem;
+	width: 100%;
+	bottom: 0;
+	left: 10vw;
+}
+
+/* set up the main tag as a flexbox row with top alignment and evenly-spaced child elements
+   (e.g. all the section tags) */
+main {
+	display: flex;
+	align-items: flex-beginning;
+	justify-content: space-evenly;
+}
+
+/* set flexbox styling on the main's children, the section tags, to take up the full row,
+   plus some small internal white space on the right side */
+section {
+	flex-basis: 0;
+	flex-grow: 1;
+	padding-right: 2rem;
+}
+
+/* sets the font family, and carefully transforms the h2 tag to a vertical mode, floated left */
+section h2 {
+	font-family: "Press Start 2P", sans-serif;
+	text-transform: uppercase;
+	writing-mode: vertical-rl; /* special CSS to make text write vertically... */
+	transform: rotate(180deg); /* ...but then we have to rotate it 180° to the direction wanted */
+	font-size: 1rem;
+	float: left;
+	margin: 0 1rem 0 0;
+	padding: 0.5rem;
+}
+
+/* removes top margin from section paragraphs */
+section p {
+	margin-top: 0;
+}
+
+/* for every odd-numbered section, give the h2 header a background color */
+section:nth-child(odd) h2 { 
+	background-color: red;
+}
+
+/* for every even-numbered section, give the h2 header a background color and text color */
+section:nth-child(even) h2 { 
+	background-color: black; 
+	color: red;
+}
+
+/* format the image in the section #coolPic */
+#coolPic img {
+	width: 70%;
+	padding: 1rem;
+	background-color: white;
+	border: 1px solid #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+

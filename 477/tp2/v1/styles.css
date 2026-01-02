@@ -1,0 +1,129 @@
+	/* styles for TP02 - alternate version 1 */
+
+/* import two fonts from Google: Abril Fatface and Playfair (with bold and italics) */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair:ital,opsz,wght@0,5..1200,400;0,5..1200,700;1,5..1200,400&display=swap');
+
+/* set box model for the whole page */
+* {
+	box-sizing: border-box;
+}
+
+/* set font family and weight for the whole page */
+body {
+	font-family: "Playfair", serif;
+	font-weight: 400;
+	background-color: #111;
+}
+
+/* set font weight for headers, and convert to uppercase */
+h1, 
+h2 {
+	font-family: "Abril Fatface", script;
+	text-transform: uppercase;
+}
+
+/* set height, width, margin, and rounded corners of all the "pages"; float left */
+header,
+section {
+	height: 90vh;
+	width: 60vh;
+	margin: 0 1rem 1rem 0;
+	border-radius: 0.33rem; /* rounded corners */
+	float: left;
+}
+
+/* set header tag background image and placement; use flexbox to center title content */
+header {
+	background-image: url(book-cover.jpg); /* image credit at end */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 3rem;
+	display: flex;
+	align-items: center; /* flexbox vertical alignment */
+}
+
+/* use flexbox to center content; set font size, color, and line spacing; use special mix-blend-mode */
+header h1 {
+	flex-grow: 1;
+	text-align: center;
+	font-size: 9vh;
+	line-height: 8vh;
+	color: #777;
+	mix-blend-mode: multiply; /* blend the h1 text into the texture of the background */
+}
+
+/* disable any positioning and sizing on the main tag parent so it doesn't interfere */
+main {
+	display: inline;
+}
+
+/* format the question sections with multiple background images */
+section {
+	display: block;
+	padding: 4rem;
+
+	/* you can apply multiple images to the background, separated by commas as you want
+	   them to appear front to back; then use the same sequence for background size, position, etc. */
+	background-image: 	url(corner-flourish-top-left.png), 
+						url(corner-flourish-top-right.png), 
+						url(corner-flourish-bottom-right.png), 
+						url(corner-flourish-bottom-left.png), 
+						url(book-paper.jpg); /* image credit at end */
+
+	background-size: 4rem, 4rem, 4rem, 4rem, cover;
+	background-position: 3% 2%, 97% 2%, 97% 98%, 3% 98%, center;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+/* set the font size of the h2 tag */
+section h2 {
+	font-size: 2rem;
+}
+
+/* set the font size of the first letter of the h2 tag -- a little bigger */
+section h2:first-letter {
+	font-size: 2.5rem;
+}
+
+/* set the font size of the p tags */
+section p {
+	font-size: 1.5rem;
+}
+
+/* convert strong parts of p tags to uppercase */
+section p strong {
+	text-transform: uppercase;
+}
+
+/* resize image to fit on "page"; add filter and blend mode to attempt simulation of black-and-white printing */
+#coolPic img {
+	width: 100%;
+	border: 1px solid black;
+	filter: grayscale(100%) brightness(70%) contrast(500%);
+	mix-blend-mode: multiply; /* blend the image into the texture of the background */
+}
+
+/* the last paragraph in the picture page is the photo credit; make it smaller and italic */
+#coolPic p:last-child {
+	font-size: 1rem;
+	font-style: italic;
+}
+
+
+
+/*
+
+image credits:
+
+book cover: 
+https://unsplash.com/photos/a-close-up-of-a-red-book-cover-im8y4BO2hso
+
+paper:
+https://unsplash.com/photos/white-wall-paint-with-black-shadow-y_2GC4EhOP4
+
+corner flourish:
+https://pixabay.com/vectors/corner-flourish-line-art-decorative-7525894/
+
+*/
+

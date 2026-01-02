@@ -1,0 +1,120 @@
+/* styles for TP02 - alternate version 2 */
+
+/* import Besley font from Google with 400 and 700 weights, and italics */
+@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* set box model for the whole page */
+* {
+	box-sizing: border-box;
+}
+
+/* set font family and weight for the whole page */
+body {
+	font-family: "Besley", serif;
+	font-weight: 400;
+}
+
+/* set font weight for headers, and convert to uppercase */
+h1, 
+h2 {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+/* set header title font size, alignment, and margin */
+header h1 {
+	font-size: 5rem;
+	text-align: center;
+	margin: 2rem 0 0.5rem 0;
+	color: #777;
+	transition: color 0.5s; /* half a second transition for text color */
+}
+
+/* when the section is hovered, change the h1 text color */
+header:hover h1 {
+	color: #000;
+}
+
+
+/* set up the main tag to be a grid with 2 columns and 3 rows */
+main {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto auto;
+}
+
+/* add internal whitespace padding to each section */
+section {
+	padding: 1rem;
+}
+
+/* add a heavy blue line above each h2 header */
+section h2 {
+	border-top: 1rem solid blue;
+	padding-top: 1rem;
+	color: #777;
+	transition: border-top 0.5s, color 0.5s; /* half a second transition for border and color */
+}
+
+/* when the section is hovered, change the h2 border and darken the text color */
+section:hover h2 {
+	border-top: 1rem solid red;
+	color: #000;
+}
+
+/* insert "Q: " before each h2 header */
+section h2::before {
+	content: "Q: ";
+}
+
+/* insert "?" after each h2 header */
+section h2::after {
+	content: "?";
+}
+
+/* set section paragraph font size, line spacing, and internal padding */
+section p {
+	font-size: 1.25rem;
+	line-height: 2rem;
+	padding-right: 4rem;
+	color: #777;
+	transition: color 0.5s; /* half a second transition for color */
+}
+
+/* when the section is hovered, darken the paragraph text color */
+section:hover p {
+	color: #000;
+}
+
+/* convert all strong tag to uppercase */
+section p strong {
+	text-transform: uppercase;
+}
+
+/* CSS hack to insert a line break after each strong tag */
+section p strong::after {
+	content: "";
+	display: block;
+}
+
+/* format image tag with border, shadow, and rotation */
+section img {
+	float: right;
+	width: 30%;
+	height: auto;
+	border: 10px solid white;
+	box-shadow: 0 5px 10px #777;
+	transform: rotate(6deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
