@@ -57,7 +57,7 @@ body {
 	--elementBackground: url("images/home-daniele-levis-pelusi-YQrUzrsRNes-unsplash.jpg");
 }
 
-body header {
+body.seasons header {
 	background-image: var(--elementBackground);
 }
 
