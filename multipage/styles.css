@@ -26,21 +26,10 @@ header {
 	background-position: center center;
 }
 
-body.fire header {
-	background-image: url("images/elements/fire-ricardo-gomez-angel--98jVaVuGv0-unsplash.jpg");
-}
 
-body.water header {
-	background-image: url("images/elements/water-jong-marshes-79mNMAvSORg-unsplash.jpg");
-}
 
-body.earth header {
-	background-image: url("images/elements/earth-chris-bair-tZep6zlTugg-unsplash.jpg");
-}
 
-body.air header {
-	background-image: url("images/elements/air-tatiana-zhukova-6bYVoUH1DkQ-unsplash.jpg");
-}
+/* ******************************************************* headers for seasons */
 
 body.winter header {
 	background-image: url("images/seasons/winter-ian-schneider-dqMxDqdhg_4-unsplash.jpg");
@@ -59,6 +48,36 @@ body.fall header {
 	background-image: url("images/seasons/fall-matt-uuBBew6g2jM-unsplash.jpg");
 	background-position: bottom center;
 }
+
+
+
+/* ******************************************************* headers for elements */
+
+body {
+	--elementBackground: url("images/home-daniele-levis-pelusi-YQrUzrsRNes-unsplash.jpg");
+}
+
+body header {
+	background-image: var(--elementBackground);
+}
+
+body.fire {
+	--elementBackground: url("images/elements/fire-ricardo-gomez-angel--98jVaVuGv0-unsplash.jpg");
+}
+
+body.water {
+	--elementBackground: url("images/elements/water-jong-marshes-79mNMAvSORg-unsplash.jpg");
+}
+
+body.earth {
+	--elementBackground: url("images/elements/earth-chris-bair-tZep6zlTugg-unsplash.jpg");
+}
+
+body.air {
+	--elementBackground: url("images/elements/air-tatiana-zhukova-6bYVoUH1DkQ-unsplash.jpg");
+}
+
+
 
 
 header h1 {
@@ -134,7 +153,8 @@ section li {
 	font-size: 1.5rem;
 }
 
-h1, h2 {
+h1,
+h2 {
 	text-transform: uppercase;
 	font-family: 'Dela Gothic One', cursive;
 }
@@ -178,11 +198,11 @@ nav a {
 	color: #fff;
 }
 
-nav > ul > li:hover {
+nav>ul>li:hover {
 	background-color: #999;
 }
 
-nav > ul > li:hover > ul > li:hover {
+nav>ul>li:hover>ul>li:hover {
 	background-color: #777;
 }
 
@@ -211,7 +231,9 @@ body.fall li.fall a {
 		padding: 0.5em 0.5em 0.5em 1em;
 	}
 
-} /* end @media orientation: portrait */
+}
+
+/* end @media orientation: portrait */
 
 
 /* desktop or landscape menu layout */
@@ -233,7 +255,7 @@ body.fall li.fall a {
 		height: 3rem;
 	}
 
-	nav > ul > li > ul {
+	nav>ul>li>ul {
 		position: absolute;
 		display: block;
 		top: 3rem;
@@ -242,34 +264,12 @@ body.fall li.fall a {
 		display: none;
 	}
 
-	nav > ul > li:hover > ul {
+	nav>ul>li:hover>ul {
 		display: block;
 	}
 
-	nav > ul > li > ul > li {
+	nav>ul>li>ul>li {
 		width: 100%;
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
