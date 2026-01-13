@@ -89,7 +89,7 @@ section:hover img {
 /* carefully rotate all 6 question sections */
 #randomQuestion         { transform: rotate(-38deg); }
 #boringFact             { transform: rotate(-25deg); }
-#funnyJoke              { transform: rotate(-12deg); }
+#courseworkLinks        { transform: rotate(-12deg); }
 #slangThatNeedsToGo     { transform: rotate(12deg); }
 #interestingArticle     { transform: rotate(25deg); }
 #coolPic                { transform: rotate(38deg); }

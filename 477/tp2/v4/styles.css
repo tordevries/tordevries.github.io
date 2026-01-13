@@ -58,20 +58,20 @@ section:hover {
 
 /* transforms and hovers for specific "cards", formatted for readability because tabs don't matter */
 
-#randomQuestion 			{ transform: rotate(-5deg)	scale(1); 		}
-#randomQuestion:hover 		{ transform: rotate(0deg) 	scale(1.05); 	}
+#courseworkLinks 			{ transform: rotate(-2deg) 	scale(1); 					}
+#courseworkLinks:hover 		{ transform: rotate(0deg) 	scale(1.25); z-index: 1; 	}
 
-#boringFact 				{ transform: rotate(2deg) 	scale(1); 		}
-#boringFact:hover 			{ transform: rotate(0deg) 	scale(1.05); 	}
+#randomQuestion 			{ transform: rotate(-5deg)	scale(1); 					}
+#randomQuestion:hover 		{ transform: rotate(0deg) 	scale(1.25); z-index: 1; 	}
 
-#funnyJoke 					{ transform: rotate(-2deg) 	scale(1); 		}
-#funnyJoke:hover 			{ transform: rotate(0deg) 	scale(1.05); 	}
+#boringFact 				{ transform: rotate(2deg) 	scale(1); 					}
+#boringFact:hover 			{ transform: rotate(0deg) 	scale(1.25); z-index: 1; 	}
 
-#interestingArticle 		{ transform: rotate(-2deg) 	scale(1); 		}
-#interestingArticle:hover 	{ transform: rotate(0deg) 	scale(1.05); 	}
+#interestingArticle 		{ transform: rotate(-2deg) 	scale(1); 					}
+#interestingArticle:hover 	{ transform: rotate(0deg) 	scale(1.25); z-index: 1; 	}
 
-#coolPic 					{ transform: rotate(3deg) 	scale(1); 		}
-#coolPic:hover 				{ transform: rotate(0deg) 	scale(1.05); 	}
+#coolPic 					{ transform: rotate(3deg) 	scale(1); 					}
+#coolPic:hover 				{ transform: rotate(0deg) 	scale(1.25); z-index: 1; 	}
 
 
 /* set h2 head fonts and margins */
