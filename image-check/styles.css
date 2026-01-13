@@ -1,9 +1,13 @@
+:root {
+    --spacer: 1em;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    padding: 0;
+    padding: var(--spacer);
     margin: 0;
 }
 
@@ -14,6 +18,8 @@ div {
 .picHolder {
     width: 100%;
     display: flex;
+    gap: var(--spacer);
+    margin-bottom: var(--spacer);
 }
 
 #picRow {
@@ -37,7 +43,6 @@ section {
     position: relative;
     background-size: cover;
     background-position: center center;
-    border: 10px solid white;
 }
 
 .original90jpg {
