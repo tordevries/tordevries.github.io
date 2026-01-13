@@ -1,0 +1,64 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    position: relative;
+}
+
+.picHolder {
+    width: 100vw;
+    display: flex;
+}
+
+#picRow {
+    flex-direction: row;
+    height: 50vh;
+}
+
+#picColumn {
+    flex-direction: column;
+}
+
+#picColumn section {
+    height: 100vh;
+}
+
+.picHolder section {
+    flex-grow: 1;
+}
+
+section {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    border: 10px solid white;
+}
+
+.original90jpg {
+    background-image: url(jari-hytonen-YCPkW_r_6uA-unsplash-6018x4024.jpg);
+}
+
+.reduced90jpg {
+    background-image: url(jari-hytonen-YCPkW_r_6uA-unsplash-1920x1284.jpg);
+}
+
+.reduced50jpg {
+    background-image: url(jari-hytonen-YCPkW_r_6uA-unsplash-1920x1284-50pct.jpg);
+}
+
+.reduced50webp {
+    background-image: url(jari-hytonen-YCPkW_r_6uA-unsplash-1920x1284-50pct.webp);
+}
+
+section p {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    width: 100%;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
