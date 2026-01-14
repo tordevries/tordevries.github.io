@@ -1,4 +1,4 @@
-	/* styles for TP02 - alternate version 1 */
+/* styles for TP02 - alternate version 1 */
 
 /* import two fonts from Google: Abril Fatface and Playfair (with bold and italics) */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair:ital,opsz,wght@0,5..1200,400;0,5..1200,700;1,5..1200,400&display=swap');
@@ -53,11 +53,6 @@ header h1 {
 	mix-blend-mode: multiply; /* blend the h1 text into the texture of the background */
 }
 
-/* disable any positioning and sizing on the main tag parent so it doesn't interfere */
-main {
-	display: inline;
-}
-
 /* format the question sections with multiple background images */
 section {
 	display: block;
@@ -71,7 +66,12 @@ section {
 						url(corner-flourish-bottom-left.png), 
 						url(book-paper.jpg); /* image credit at end */
 
-	background-size: 4rem, 4rem, 4rem, 4rem, cover;
+	background-size: 	4rem, 
+						4rem, 
+						4rem, 
+						4rem, 
+						cover;
+						
 	background-position: 3% 2%, 97% 2%, 97% 98%, 3% 98%, center;
 	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 }
