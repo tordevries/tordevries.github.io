@@ -1,10 +1,18 @@
 body {
 	background-color: #333;
 	color: white;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	line-height: 1.5em;
 }
 
 a {
 	color: lightskyblue;
+}
+
+section {
+	height: 100vh;
+	border-bottom: 2px dotted #777;
 }
 
 #vidBox {

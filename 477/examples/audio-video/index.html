@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	
+
 	<!-- meta tags and title -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS Audio-Video</title>
-	
+
 	<!-- external and internal CSS -->
 	<link rel="stylesheet" href="styles.css" media="all">
-	
+
 	<!-- external and internal JavaScript -->
 	<script src="scripts.js" defer></script>
 
 <body>
 
-	<p>Audio (<a href="https://www.w3schools.com/html/html5_audio.asp">HTML</a> and <a href="https://www.w3schools.com/tags/ref_av_dom.asp">DOM</a>):</p>
+	<main>
 
-	<audio id="chaseMusic" controls>
-		<source src="alexander-nakarada-chase.mp3" type="audio/mpeg">
-		(Your browser does not support the audio element.)
-	</audio>
-	
-	<p>JS audio controls:</p>
-	<ul>
-		<li><button id="audPlay">Play</button></li>
-		<li><button id="audPause">Pause</button></li>
-		<li>File URL: <span id="audURL"></span></li>
-		<li>Status: <span id="audStatus"></span></li>
-	</ul>
-	
-	<hr>
-	
-	<p>Video (<a href="https://www.w3schools.com/html/html5_video.asp">HTML</a> and <a href="https://www.w3schools.com/tags/ref_av_dom.asp">DOM</a>):</p>
-	
-	<div id="vidBox">
-		
-		<video id="typingVideo" controls>
-			<source src="Pexels-Videos-3766-1080hb2.mp4" type="video/mp4">
-			(Your browser does not support the video tag.)
-		</video>
-		
-	</div>
-	
-	<p>JS video controls:</p>
-	<ul>
-		<li><button id="vidPlay">Play</button></li>
-		<li><button id="vidPause">Pause</button></li>
-		<li>File URL: <span id="vidURL"></span></li>
-		<li>Status: <span id="vidStatus"></span></li>
-	</ul>
-	
+		<section>
+			
+			<h1>Audio</h1>
+			<p><a href="https://www.w3schools.com/html/html5_audio.asp">HTML</a> and <a
+					href="https://www.w3schools.com/tags/ref_av_dom.asp">DOM</a></p>
 
+			<audio id="chaseMusic" controls>
+				<source src="alexander-nakarada-chase.mp3" type="audio/mpeg">
+				(Your browser does not support the audio element.)
+			</audio>
+
+			<p>JS audio controls:</p>
+			<ul>
+				<li><button id="audPlay">Play</button></li>
+				<li><button id="audPause">Pause</button></li>
+				<li>File URL: <span id="audURL"></span></li>
+				<li>Status: <span id="audStatus"></span></li>
+			</ul>
+
+		</section>
+
+		<section>
+
+			<h1>Video</h1>
+			<p><a href="https://www.w3schools.com/html/html5_video.asp">HTML</a> and <a
+					href="https://www.w3schools.com/tags/ref_av_dom.asp">DOM</a></p>
+
+			<div id="vidBox">
+
+				<video id="typingVideo" controls>
+					<source src="Pexels-Videos-3766-1080hb2.mp4" type="video/mp4">
+					(Your browser does not support the video tag.)
+				</video>
+
+			</div>
+
+			<p>JS video controls:</p>
+			<ul>
+				<li><button id="vidPlay">Play</button></li>
+				<li><button id="vidPause">Pause</button></li>
+				<li>File URL: <span id="vidURL"></span></li>
+				<li>Status: <span id="vidStatus"></span></li>
+			</ul>
+
+		</section>
+
+	</main>
+	
 </body>
-</html>
 
+</html>
