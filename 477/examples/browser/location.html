@@ -17,6 +17,7 @@
 			window.history.pushState( {}, "", url);
 		}
 
+		// output the location info into the #output object in the DOM
 		function outputInfo() {
 			let pOutput = document.querySelector("#output");
 			pOutput.innerHTML = "URL: " + location.href + "<br>"; 
@@ -43,6 +44,7 @@
 		  	// add a click event to the second button
 		  	document.querySelector("#resetURL").addEventListener("click", function(e) {
 				changeURL(origURL);
+				outputInfo();
 			});
 
 		});
