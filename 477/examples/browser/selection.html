@@ -10,11 +10,25 @@
 	<style>
 
 		/* set some basic styles */
-		p {
+
+		:root {
+			--textPadding: 4rem;
+		}
+
+		body {
+			font-family: Georgia;
+		}
+
+		h1 {
 			font-size: 48px;
 			line-height: 1.5em;
-			padding: 1em;
-			font-family: Georgia;
+			padding: var(--textPadding);
+			font-weight: normal;
+		}
+
+		p {
+			padding: 0 var(--textPadding);
+			font-style: italic;
 		}
 		
 	</style>
@@ -37,7 +51,9 @@
 </head>
 <body>
 
-	<p>The Department of Digital Technology and Culture is a home for digital innovation, bridging the worlds of creative production and the critical exploration of digital technology. Spanning four WSU campuses — Pullman, Tri-Cities, Vancouver, and Global — this department is rooted in fostering creative research, scholarship, and production that melds diverse knowledge systems with the progressive and innovative uses of technology.</p>
+	<h1>The Department of Digital Technology and Culture is a home for digital innovation, bridging the worlds of creative production and the critical exploration of digital technology. Spanning four WSU campuses — Pullman, Tri-Cities, Vancouver, and Global — this department is rooted in fostering creative research, scholarship, and production that melds diverse knowledge systems with the progressive and innovative uses of technology.</h1>
+
+	<p>Highlight text and look at the output in the console.</p>
 
 </body>
 </html>
