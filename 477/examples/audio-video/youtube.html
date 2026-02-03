@@ -1,109 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	
+
 	<!-- meta tags and title -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS YouTube</title>
-	
-	<!-- external and internal CSS -->
+
+	<!-- external CSS -->
 	<link rel="stylesheet" href="styles.css" media="all">
 
+	<!-- external JavaScript -->
+	<script src="youtube-scripts.js" defer></script>
+
 <body>
-	
-	<p>YouTube (via <a href="https://developers.google.com/youtube/iframe_api_reference">API</a>):</p>
 
-	<div id="player"></div>
+	<main>
+		<section>
 
-	<script>
+			<h1>YouTube</h1>
 
-		// 2. This code loads the IFrame Player API code asynchronously.
-		var tag = document.createElement('script');
+			<p>Via <a href="https://developers.google.com/youtube/iframe_api_reference">API</a></p>
 
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			<!-- the player object is empty in the original HTML, and filled with the iframe code by JS -->
+			<div id="player"></div>
 
-		// 3. This function creates an <iframe> (and YouTube player)
-		//    after the API code downloads.
-		var player;
-		function onYouTubeIframeAPIReady() {
-			player = new YT.Player('player', {
-				height: '390',
-				width: '640',
-				videoId: '-2MUYzkisCM',
-				events: {
-					'onReady': onPlayerReady,
-					'onStateChange': onPlayerStateChange
-				}
-			});
-		}
+			<p>JS YouTube controls:</p>
 
-		// 4. The API will call this function when the video player is ready.
-		function onPlayerReady(event) {
-			// event.target.playVideo();  // commented out so it doesn't autoplay
-			document.getElementById("vidStatus").innerHTML = "Ready";
-		}
+			<ul>
+				<li><button id="youPlay">Play</button></li>
+				<li><button id="youPause">Pause</button></li>
+				<li>Video URL: <span id="vidURL"></span></li>
+				<li>Status: <span id="vidStatus"></span></li>
+			</ul>
 
-		// 5. The API calls this function when the player's state changes.
-		//    The function indicates that when playing a video (state=1),
-		//    the player should play for six seconds and then stop.
-		var done = false;
-		function onPlayerStateChange(event) {
-			if (event.data == YT.PlayerState.PLAYING && !done) {
-				setTimeout(stopVideo, 6000);
-				done = true;
-			}
-
-			if (event.data == 2) {
-				document.getElementById("vidStatus").innerHTML = "Paused";
-			}
-
-			if (event.data == 1) {
-				document.getElementById("vidStatus").innerHTML = "Playing";
-			}
-
-		}
-		function stopVideo() {
-			player.stopVideo();
-		}
-
-
-		// function to play the video using the object from window.onload
-		function playVid() {
-			player.playVideo();
-		}
-
-		// function to pause the video using the object from window.onload
-		function pauseVid() {
-			player.pauseVideo()
-		}
-
-
-		// wait for window to load, then get info and attach click events
-		window.addEventListener("load", function() {
-			
-			// get video URL
-			document.querySelector("#vidURL").innerHTML = player.getVideoUrl();
-
-			// add event listeners to call functions that start and stop audio
-			document.querySelector("#youPlay").addEventListener("click", playVid);	
-			document.querySelector("#youPause").addEventListener("click", pauseVid);	
-
-		});
-
-
-	</script>
-
-	<p>JS YouTube controls:</p>
-	<ul>
-		<li><button id="youPlay">Play</button></li>
-		<li><button id="youPause">Pause</button></li>
-		<li>Video URL: <span id="vidURL"></span></li>
-		<li>Status: <span id="vidStatus"></span></li>
-	</ul>
-	
+		</section>
+	</main>
 </body>
-</html>
 
+</html>
