@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Pop-Up Windows</title>
+
+	<script>
+
+		// wait for the DOM to load
+		document.addEventListener("DOMContentLoaded", function() {
+		  
+		  	// add a click event to the first button
+			document.querySelector("#exampleAlert").addEventListener("click", function(e) {
+				window.alert("Just click OK. There's nothing you can do here.");
+				console.log("Clicked OK.");
+			});
+
+		  	// add a click event to the second button
+		  	document.querySelector("#exampleConfirm").addEventListener("click", function(e) {
+				let userConfirm = window.confirm("Would you like to click OK?");
+				console.log("Confirm response: " + userConfirm);
+			});
+
+		  	// add a click event to the second button
+		  	document.querySelector("#examplePrompt").addEventListener("click", function(e) {
+				let userPrompt = window.prompt("Type something:");
+				console.log("Prompt response: " + userPrompt);
+			});
+
+		});
+	
+	</script>
+
+</head>
+<body>
+	
+	<p>See the console log for output.</p>
+	
+	<button id="exampleAlert">Alert</button>
+	<button id="exampleConfirm">Confirm</button>
+	<button id="examplePrompt">Prompt</button>
+
+</body>
+</html>
+

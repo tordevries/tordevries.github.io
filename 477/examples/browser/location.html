@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Location</title>
+
+	<script>
+		
+		// save the original URL in a global variable
+		let origURL = window.location.href;
+		
+		// function to accept a URL and change the window to it
+		function changeURL(url) {
+			window.history.pushState( {}, "", url);
+		}
+
+		function outputInfo() {
+			let pOutput = document.querySelector("#output");
+			pOutput.innerHTML = "URL: " + location.href + "<br>"; 
+			pOutput.innerHTML += "Protocol: " + location.protocol + "<br>";
+			pOutput.innerHTML += "Domain: " + location.hostname + "<br>";
+			pOutput.innerHTML += "Path: " + location.pathname + "<br>";
+			pOutput.innerHTML += "Query: " + location.search + "<br>";
+			pOutput.innerHTML += "Hash: " + location.hash + "<br>";
+		}
+		
+		// wait for the DOM to load
+		document.addEventListener("DOMContentLoaded", function() {
+		  
+		  	// add a click event to the first button
+			document.querySelector("#hackURL").addEventListener("click", function(e) {
+				let userPrompt = window.prompt("Hack the displayed URL:", (location.pathname + location.search + location.hash) );
+				changeURL(userPrompt);
+				outputInfo();
+			});
+
+		  	// add a click event to the second button
+		  	document.querySelector("#resetURL").addEventListener("click", function(e) {
+				changeURL(origURL);
+			});
+
+			// output location info
+		  	outputInfo();
+
+		});
+	
+	</script>
+
+</head>
+<body>
+
+	<p><a href="https://dtc477.net/examples/browser/location.html?search=pizza#topping1">Try this link.</a></p>
+	
+	<p id="output"></p>
+
+	<p><button id="hackURL">Change URL</button> or <button id="resetURL">change it back</button></p>
+
+</body>
+</html>
+
