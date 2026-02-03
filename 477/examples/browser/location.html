@@ -29,6 +29,9 @@
 		
 		// wait for the DOM to load
 		document.addEventListener("DOMContentLoaded", function() {
+
+			// output location info
+		  	outputInfo();
 		  
 		  	// add a click event to the first button
 			document.querySelector("#hackURL").addEventListener("click", function(e) {
@@ -41,9 +44,6 @@
 		  	document.querySelector("#resetURL").addEventListener("click", function(e) {
 				changeURL(origURL);
 			});
-
-			// output location info
-		  	outputInfo();
 
 		});
 	
