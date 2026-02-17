@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- 
+
+(Comments in HTML start with <! -- and end with -- >.)
+
+HTML is a collection of "objects" organized hierarchically into the Document Object Model, or DOM. An "object" is an
+element of information — paragraphs, headlines, images, etc. — or something that helps format/style the information.
+These objects are defined with "tags" — specially coded text that begin with the less-than symbol "<"" and end with
+the greater-than symbol ">". For example...
+
+	<p>
+	
+...is a paragraph tag.
+
+However, "<p>" is just the opening tag. It needs a closing tag to mark the ending of the paragraph. A closing tag is 
+the same as an opening tag, but inserts a right-leaning slash "/" just after the "<".
+
+So, a complete paragraph would be written with an opening <p> and a closing </p>, like this:
+
+	<p>Logically, this is a complete paragraph.</p>
+
+Tags can contain other tags, which organizes the logical arrangement of information and provides a reliable framework
+for applying visual/layout styles with CSS.
+
+Study the example page below. The <html> tag holds all the information, all the objects, for the page. 
+
+Within that, the <head> tag contains information about the page, like the page's title that appears in the browser tab,
+and one or more links to a CSS file that has information about the visual styles of page objects. Although the tags in
+the <head> are important, they do not contain the actual visible content you see in your browser.
+
+Also within the <html> tag, the <body> tag holds all the visible content of the page. Within that, there is a child 
+object, a <main> tag, to hold the main content of the page. Within that are two child objects, both <section> tags, 
+and within each of those are more children:  one <h1> tag (headline level 1) and two or three <p> tags (paragraphs) 
+containing longer written content.
+
+In this example DOM, the logical hierarchy of all the tags is:
+
+- html
+	- head
+		- meta
+		- meta
+		- title
+		- link
+	- body
+		- main
+			- section
+				- h1
+				- p
+				- p
+				- p
+			- section
+				- h1
+				- p
+				- p
+		- footer
+			- p
+
+As described above, we use opening and closing tags to mark the beginning and ending of an object. One object "opens"
+with a tag, then might contain one or more objects within it, and then "closes". We describe this hierarchy in terms
+of relationships like "parent", "child", "sibling", "ancestor", and "descendant".
+
+In this example, each <p> tag in the <main> section is:
+- a sibling to one or more <p> tags and an <h1> tag
+- a child of its <section> tag
+- a grandchild of the <main> tag
+- a great-grandchild of the <body> tag
+- a great-great-grandchild of the <html> tag
+- a descendant of the <section>, <main>, <body>, and <html> tags
+
+However, the <p> tag in the <footer> is different, because it is:
+- not a sibling to any other tag
+- a child of the <footer> tag
+- a grandchild of the <body> tag
+- a great-grandchild of the <html> tag
+- a descendant of the <footer>, <body>, and <html> tags
+
+Similarly, the <main> tag is: 
+- a sibling to the <footer> tag
+- a child of the <body> tag
+- a grandchild of the <html> tag
+- a parent of two <section> tags
+- a grandparent of two <h1> tags and five <p> tags
+- a descendant of the <body> and <html> tags
+- an ancestor of the <section>, <h1>, and <p> tags
+
+A tag can have extra information described inside it that helps define it. These are called attributes, and appear 
+as text that equals a value, like this:
+
+	<section id="infoPartA">
+
+The ID attribute here has a value of "infoPartA".
+
+Another example:
+
+	<p class="imSpecial">
+
+The class attribute here has a value of "imSpecial".
+
+After studying all the HTML below, find and click on the filename "styles.css" below to see the CSS file that
+includes all the visual styles for this DOM, and read the comments there too.
+
+-->
+
+<html>
+
+<head>
+
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML, CSS, and DOM Example</title>
+
+	<!-- external CSS -->
+	<link rel="stylesheet" href="styles.css" media="all">
+
+</head>
+
+<body>
+
+	<main>
+
+		<section id="infoPartA">
+
+			<h1>Right-click on this page and choose "View page source" to read comments</h1>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a ante sit amet est sagittis
+				placerat vitae eget turpis. Integer ut nisl ac eros finibus efficitur. Aliquam sit amet justo non tortor
+				pellentesque tincidunt. Donec faucibus sit amet dui in finibus. Quisque in libero ut massa dictum
+				malesuada eget vitae dolor. Proin elementum urna diam, ut rutrum est ultricies ultricies. Ut sodales
+				metus neque, eget sagittis mi blandit sit amet. Suspendisse vel dapibus mi.</p>
+
+			<p class="imSpecial">Nam elit quam, scelerisque eu ex ac, tempus sodales tortor. Pellentesque commodo elementum nisl at
+				aliquet. Fusce nec fringilla mi. Vivamus iaculis, tellus condimentum mollis ullamcorper, enim nulla
+				faucibus elit, tincidunt pretium enim sem sit amet diam. Proin eget suscipit odio. Nullam eget nisl
+				dolor. Nulla vitae elit arcu. In rutrum interdum nulla, vitae luctus eros rhoncus ac. Nunc vulputate sit
+				amet leo eu cursus. Nunc vel lacinia sem.
+			</p>
+
+			<p>Nulla porta euismod tempus. Ut ac lorem sodales, fringilla lacus non, rutrum erat. Duis metus purus,
+				suscipit quis sem eget, consectetur porta lorem. Nullam eleifend quis ante ac scelerisque. Vivamus
+				placerat non nibh imperdiet tincidunt. Donec vel auctor mauris. Suspendisse condimentum mi non urna
+				volutpat sollicitudin.
+			</p>
+
+		</section>
+
+
+		<section id="infoPartB">
+
+			<h1>And now for the second section</h1>
+
+			<p>Curabitur tincidunt rhoncus orci sed molestie. Donec felis odio, gravida ac velit at, mollis fringilla
+				velit. Sed eget est ac arcu euismod dictum. Mauris blandit bibendum semper. Vivamus euismod vitae lacus
+				imperdiet bibendum. Suspendisse porta justo vitae nulla posuere, nec aliquam nunc pulvinar. Fusce ipsum
+				odio, pulvinar sed nulla quis, ornare efficitur ligula.
+			</p>
+
+			<p class="imSpecial">Phasellus in pretium lectus. Aliquam neque ligula, bibendum nec tellus a, ullamcorper facilisis velit.
+				Nam erat dui, tincidunt vel nunc vel, pharetra laoreet arcu. Ut commodo nisi in condimentum malesuada.
+				Vestibulum condimentum metus sit amet nisl posuere, et posuere ligula tristique. Curabitur eget ante sed
+				diam fermentum dignissim. Integer vel nisl non orci volutpat porttitor. Sed suscipit, tortor porttitor
+				euismod scelerisque, metus velit rhoncus velit, et bibendum orci libero at ipsum. Integer non dolor et
+				sem sagittis tincidunt sed quis elit. Pellentesque maximus augue mollis nunc volutpat finibus.
+			</p>
+
+		</section>
+
+	</main>
+
+	<footer>
+
+		<p>Text for the page footer.</p>
+		
+	</footer>
+
+</body>
+
+</html>

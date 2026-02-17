@@ -1,0 +1,195 @@
+/* 
+
+(Comments in CSS documents start with / * and end with * /.)
+
+CSS relies on the hierarchical structure of the DOM, which is initially set up by the HTML. 
+
+We use CSS "selectors" like little searches to find elements in the DOM, then identify a style 
+"property" we want to set and give that property a value.
+
+For example, you could style the <h1> tags in the section tags by setting up the same kind
+of hierarchy as the DOM elements, with each level selecting that tag in that level of the
+hierarchy, then finally picking a style property (in this case, "font-family") and giving it
+a style value (in this case, "Arial"). Like this:
+*/
+
+html {
+
+    body {
+
+        main {
+
+            section {
+
+                h1 {
+                    font-family: Arial; /* sets the typeface */
+                }
+
+            }
+
+        }
+        
+    }
+
+}
+
+/* 
+The logical hierarchy here is identical to the DOM hierarchy in the HTML.
+
+We can apply styles to multiple elements of the hierarchy. Here's the above with added CSS styling for 
+the footer and its paragraph tag:
+*/
+
+html {
+
+    body {
+
+        main {
+
+            section {
+
+                h1 {
+                    font-family: Arial; /* sets the typeface family */
+                }
+
+            }
+
+        }
+
+        footer {
+
+            p {
+                font-style: italic; /* makes this paragraph italics */
+            }
+            
+        }
+        
+    }
+
+}
+
+/* 
+We could also set styles to the objects along the hierarchy, like this added formatting for section tags: 
+*/
+
+html {
+
+    body {
+
+        main {
+
+            section {
+
+                background-color: lightskyblue; /* sets a background color for the entire section */
+
+                h1 {
+                    font-family: Arial; /* sets the typeface */
+                }
+
+            }
+
+        }
+
+        footer {
+
+            p {
+                font-style: italic;
+            }
+            
+        }
+
+    }
+
+}
+
+/* 
+However, we usually write CSS with a shorthand that collapses the hierarchy into spaces. The above
+CSS coding could be expressed like this: 
+*/
+
+html body main section {
+    background-color: lightskyblue;
+}
+
+html body main section h1 {
+    font-family: Arial;
+}
+
+html body footer p {
+    font-style: italic;
+}
+
+
+/*
+This expresses parent-child hierearchy using spaces, which is shorter and easier to read at a glance.
+
+Importantly, CSS selectors are usually simplified even further:
+
+First, we never need to include "html" in the CSS selector. It is the ancestor object that contains
+every other object on the page and is implied in everything.
+
+Second, we do not need to include "body" in the CSS selector. It is the ancestor object that contains
+all the other visible objects, and is also implied in everything.
+
+Third, if we want the styles to apply to all of that tag throughout the DOM, regardless of its parents,
+we can just select that tag.
+
+For example, if we want to style all the section and h1 tags:
+
+*/
+
+section {
+    background-color: lightskyblue;
+}
+
+h1 {
+    font-family: Arial;
+}
+
+/*
+However, we have to include the hierarchy if we want to get more specific. For example, to apply italics
+to the paragraph in the footer tag, but not paragraphs in other places, we must specify the ancestry:
+*/
+
+footer p {
+    font-style: italic;
+}
+
+/*
+For more specific control over styling, IDs in the DOM can be referenced with a hashtag # symbol if we 
+want to specify styling for that element or its descendants, like this:
+*/
+
+#infoPartA {
+    background-color: darkgray;
+    color: #eee;
+}
+
+#infoPartA h1 {
+    color: gold;
+}
+
+/*
+Each specific ID name can only be applied to one object in the DOM. 
+
+However, classes can be applied to as many objects as needed. Classes are referred to with a 
+period . symbol, like this:
+*/
+
+.imSpecial {
+    font-size: 20px; /* make the font bigger */
+}
+
+/* 
+These can all be combined as necessary. For example, to style "imSpecial" class objects that are 
+descendants of the "infoPartB" ID object, we could write:
+*/
+
+#infoPartB .imSpecial {
+    font-family: monospace; /* set font to typewriter-like family */
+}
+
+/* 
+With this understanding of the DOM hierarchy as expressed through HTML and CSS, and with the full
+array of CSS styling and formatting opportunities, you can lay out any design you want.
+*/
