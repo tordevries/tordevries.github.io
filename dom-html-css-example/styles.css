@@ -5,12 +5,22 @@
 CSS relies on the hierarchical structure of the DOM, which is initially set up by the HTML. 
 
 We use CSS "selectors" like little searches to find elements in the DOM, then identify a style 
-"property" we want to set and give that property a value.
+"property" we want to set and give that property a value. We do this by referencing the object
+we want to style and then put the style properties in curly braces, like this:
+
+object {
+    style-property: property-value;
+    another-style-property: another-value;
+}
+
+In this abstract example, the DOM object "object" is the selector, and is being given values for
+two different styles. Of course, this is abstract; the selecetor, styles, and values need to be
+specific.
 
 For example, you could style the <h1> tags in the section tags by setting up the same kind
 of hierarchy as the DOM elements, with each level selecting that tag in that level of the
-hierarchy, then finally picking a style property (in this case, "font-family") and giving it
-a style value (in this case, "Arial"). Like this:
+hierarchy. Then, pick a style property (in this case, "font-family") and give it a value 
+(in this case, "Arial"). Like this:
 */
 
 html {
@@ -49,7 +59,7 @@ html {
             section {
 
                 h1 {
-                    font-family: Arial; /* sets the typeface family */
+                    font-family: Arial; 
                 }
 
             }
@@ -59,7 +69,7 @@ html {
         footer {
 
             p {
-                font-style: italic; /* makes this paragraph italics */
+                font-style: italic; /* show it in italics */
             }
             
         }
@@ -80,10 +90,10 @@ html {
 
             section {
 
-                background-color: lightskyblue; /* sets a background color for the entire section */
+                background-color: lightskyblue; /* sets background color */
 
                 h1 {
-                    font-family: Arial; /* sets the typeface */
+                    font-family: Arial; 
                 }
 
             }
@@ -108,15 +118,15 @@ CSS coding could be expressed like this:
 */
 
 html body main section {
-    background-color: lightskyblue;
+    background-color: lightskyblue; /* sets background color */
 }
 
 html body main section h1 {
-    font-family: Arial;
+    font-family: Arial; /* sets the font family */
 }
 
 html body footer p {
-    font-style: italic;
+    font-style: italic; /* show it in italics */
 }
 
 
@@ -162,11 +172,11 @@ want to specify styling for that element or its descendants, like this:
 
 #infoPartA {
     background-color: darkgray;
-    color: #eee;
+    color: #eee; /* sets the font color of all child objects of this object */
 }
 
 #infoPartA h1 {
-    color: gold;
+    color: gold; /* sets the font color specifically for the child h1 objects in this object*/
 }
 
 /*
@@ -177,7 +187,7 @@ period . symbol, like this:
 */
 
 .imSpecial {
-    font-size: 20px; /* make the font bigger */
+    font-size: 20px; /* sets the font size */
 }
 
 /* 
@@ -186,7 +196,7 @@ descendants of the "infoPartB" ID object, we could write:
 */
 
 #infoPartB .imSpecial {
-    font-family: monospace; /* set font to typewriter-like family */
+    font-family: monospace; 
 }
 
 /* 
