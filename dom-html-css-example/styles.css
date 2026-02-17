@@ -14,12 +14,12 @@ object {
 }
 
 In this abstract example, the DOM object "object" is the selector, and is being given values for
-two different styles. Of course, this is abstract; the selecetor, styles, and values need to be
+two different styles. Of course, this is abstract; the selector, styles, and values need to be
 specific.
 
-For example, you could style the <h1> tags in the section tags by setting up the same kind
-of hierarchy as the DOM elements, with each level selecting that tag in that level of the
-hierarchy. Then, pick a style property (in this case, "font-family") and give it a value 
+For example, you could style the headline level 1 <h1> tags in the section tags with CSS that follows
+the same kind of hierarchy as the DOM elements, with each level selecting that tag in that level of
+the hierarchy. Then, pick a style property (in this case, "font-family") and give it a value 
 (in this case, "Arial"). Like this:
 */
 
@@ -44,7 +44,8 @@ html {
 }
 
 /* 
-The logical hierarchy here is identical to the DOM hierarchy in the HTML.
+The logical hierarchy here is identical to the DOM hierarchy in the HTML. Curly braces open { and close }
+each level of the hierarchy.
 
 We can apply styles to multiple elements of the hierarchy. Here's the above with added CSS styling for 
 the footer and its paragraph tag:
@@ -79,7 +80,9 @@ html {
 }
 
 /* 
-We could also set styles to the objects along the hierarchy, like this added formatting for section tags: 
+Carefully note the hierarchy.
+
+We can also set styles to the objects along the hierarchy, like this added formatting for section tags: 
 */
 
 html {
@@ -132,19 +135,20 @@ html body footer p {
 
 /*
 This expresses parent-child hierearchy using spaces, which is shorter and easier to read at a glance.
+Note that the spaces are absolutely critical and must be used carefully.
 
 Importantly, CSS selectors are usually simplified even further:
 
-First, we never need to include "html" in the CSS selector. It is the ancestor object that contains
-every other object on the page and is implied in everything.
+First, we do not need to include "html" in the CSS selector. It is the top-level ancestor object which
+contains every other object on the page and is implied in every selector.
 
-Second, we do not need to include "body" in the CSS selector. It is the ancestor object that contains
-all the other visible objects, and is also implied in everything.
+Second, we do not need to include "body" in the CSS selector. It is an ancestor object (almost top-level)
+which contains all the other visible objects, and is also implied in every selector.
 
-Third, if we want the styles to apply to all of that tag throughout the DOM, regardless of its parents,
-we can just select that tag.
+Third, if we want some styles to apply to all of that kind of tag throughout the DOM, regardless of its
+parents, we can just make a selector for that tag.
 
-For example, if we want to style all the section and h1 tags:
+For example, if we want to style all the <section> and <h1> tags:
 
 */
 
@@ -157,8 +161,11 @@ h1 {
 }
 
 /*
-However, we have to include the hierarchy if we want to get more specific. For example, to apply italics
-to the paragraph in the footer tag, but not paragraphs in other places, we must specify the ancestry:
+If we're trying to style every <section> and every <h1> tag available in the DOM, no matter its ancestry,
+then we do not need to include any ancestors in the hierarchy.
+
+However, we must include the hierarchy if we want to get more specific. For example, to apply italics
+to the paragraph in the <footer> tag, but not to paragraphs in other places, we must specify the ancestry:
 */
 
 footer p {
@@ -166,8 +173,10 @@ footer p {
 }
 
 /*
-For more specific control over styling, IDs in the DOM can be referenced with a hashtag # symbol if we 
-want to specify styling for that element or its descendants, like this:
+This example will apply to all the <p> tags in the <footer>, but nothing outside the <footer> hierarchy.
+
+For more specific control over styling, IDs in the DOM can be referenced with a hashtag # symbol so we 
+can specify styling for that one element or its descendants, like this:
 */
 
 #infoPartA {
@@ -180,10 +189,11 @@ want to specify styling for that element or its descendants, like this:
 }
 
 /*
-Each specific ID name can only be applied to one object in the DOM. 
+These examples add style specifically to the object with ID "infoPartA" and then to all the <h1> tags
+that are descendents of that object.
 
-However, classes can be applied to as many objects as needed. Classes are referred to with a 
-period . symbol, like this:
+Each specific ID name can only be applied to one object in the DOM. However, unliked IDs, classes
+can be applied to as many objects as needed. Classes are referred to with a period . symbol, like this:
 */
 
 .imSpecial {
@@ -191,7 +201,10 @@ period . symbol, like this:
 }
 
 /* 
-These can all be combined as necessary. For example, to style "imSpecial" class objects that are 
+This applies styling to everything matching the class "imSpecial" anywhere in the DOM, regardless of
+ancestry.
+
+These can all be combined as necessary. For example, to style "imSpecial" class objects if they are 
 descendants of the "infoPartB" ID object, we could write:
 */
 
@@ -200,6 +213,8 @@ descendants of the "infoPartB" ID object, we could write:
 }
 
 /* 
-With this understanding of the DOM hierarchy as expressed through HTML and CSS, and with the full
-array of CSS styling and formatting opportunities, you can lay out any design you want.
+
+With this understanding of the DOM hierarchy as expressed through HTML and CSS, and with the full array
+of CSS selecting, styling, and formatting possibilities, you can visually lay out any design you want.
+
 */
