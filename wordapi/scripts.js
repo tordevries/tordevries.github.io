@@ -19,8 +19,7 @@ async function getData() {
     }
 }
 
-async function getHTML() {
-    let url = "https://tordevries.github.io/snippets/wsu-html-css.html";
+async function getHTML(url) {
     try {
         const response = await fetch(url);
         const result = await response.text();
@@ -33,6 +32,6 @@ async function getHTML() {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    getHTML();
+    getHTML("https://tordevries.github.io/snippets/wsu-html-css.html");
    
 });
