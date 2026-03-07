@@ -9,20 +9,30 @@ const options = {
 
 
 
-async function getData(callback) {
+async function getData() {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result.definitions[0].definition);
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function getHTML() {
+    let url = "https://tordevries.github.io/snippets/wsu-html-css.html";
+    try {
+        const response = await fetch(url);
+        const result = await response.text();
+        document.body.innerHTML = result;
     } catch (error) {
         console.error(error);
     }
 }
 
 
-
 document.addEventListener("DOMContentLoaded", function() {
 
-    getData();
+    getHTML();
    
 });
