@@ -9,9 +9,9 @@ const options = {
 
 
 
-async function getData() {
+async function getData(url, opts = {}) {
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(url, opts);
         const result = await response.json();
         console.log(result);
     } catch (error) {
@@ -57,6 +57,8 @@ function getJSON(url) {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    getJSON("https://tordevries.github.io/snippets/sample-people.js");
-   
+    getData(url, options);
+
+    getHTMLTwo("../snippets/sample-person.html");
+    
 });
