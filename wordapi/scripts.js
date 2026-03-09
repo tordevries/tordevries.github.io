@@ -41,9 +41,22 @@ function getHTMLOne(url) {
         });
 }
 
+function getJSON(url) {
+    const data = fetch(url)
+        .then( function(response) {  
+            return response.json(); 
+        })
+        .then( function(result) {
+            // do code with "result"
+            console.log(result);
+            console.log(result[0].firstname);
+        });
+}
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    getHTMLTwo("https://tordevries.github.io/snippets/wsu-html-css.html");
+    getJSON("https://tordevries.github.io/snippets/sample-people.js");
    
 });
