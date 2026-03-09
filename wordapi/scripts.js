@@ -19,7 +19,8 @@ async function getData() {
     }
 }
 
-async function getHTML(url) {
+async function getHTMLTwo(url) {
+    console.log("html two");
     try {
         const response = await fetch(url);
         const result = await response.text();
@@ -29,9 +30,20 @@ async function getHTML(url) {
     }
 }
 
+function getHTMLOne(url) {
+    const data = fetch(url)
+        .then( function(response) {  
+            return response.text(); 
+        })
+        .then( function(result) {
+            // do code with "result"
+            console.log(result);
+        });
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    getHTML("https://tordevries.github.io/snippets/wsu-html-css.html");
+    getHTMLTwo("https://tordevries.github.io/snippets/wsu-html-css.html");
    
 });
