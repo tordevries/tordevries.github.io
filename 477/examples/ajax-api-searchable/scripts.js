@@ -1,99 +1,108 @@
-// set up the root URL and access options as globals — adapted from RapidAPI code
-const url = 'https://wordsapiv1.p.rapidapi.com/words/';
+// javascript to load a word from a dictionary API
+
+// copied from RapidAPI
+const urlPart1 = 'https://wordsapiv1.p.rapidapi.com/words/';
+const urlPart2 = '/definitions';
 const options = {
 	method: 'GET',
 	headers: {
 		'x-rapidapi-key': 'b1191f052bmsh9393381bd6d8022p103498jsna1764183a67a',
-		'x-rapidapi-host': 'wordsapiv1.p.rapidapi.com'
+		'x-rapidapi-host': 'wordsapiv1.p.rapidapi.com',
+		'Content-Type': 'application/json'
 	}
 };
 
-// asynchronous function to fetch data from the API, convert JSON results to an object,
-// and pass it to doSomething() to... well, do something 
-async function getWord(searchWord) {
-
-    // API is the root URL plus the word we're searching
-    const searchURL = url + searchWord; 
-
-    // try fetching the info
+// the other function for getting data
+async function getData(url, opts) {
     try {
-
-        // pass url and global options
-        const response = await fetch(searchURL, options); 
-
-        // convert json results to object
-        const result = await response.json(); 
-
-        // pass "result" to another function to do something!
+        const response = await fetch(url, opts);
+        const result = await response.json();
+        // do code with "result"
         doSomething(result);
-
     } catch (error) {
         console.error(error);
     }
 }
 
-function doSomething(searchResult) {
-    // output search to console
-    console.log(searchResult);
+// function to initiate the call to the API
+function getWord(word) {
+    let wordURL = urlPart1 + word + urlPart2;
+    getData(wordURL, options);
+}
 
-    // output the word
-    document.querySelector("#word").innerHTML = searchResult.word;
+// function to do something with the dictionary result data
+function doSomething(wordData) {
+    console.log(wordData);
 
-    // definition results is an array because one word can have many definitions
-    let allDefs = searchResult.results;
+    // see if word came back succesfully
+    if (wordData.success == false) {
 
-    // clear prior definitions out of the <ul> tag
-    document.querySelector("#definitions").innerHTML = "";
+        // word does not exist, update page
 
-    // track last type of word, as some definitions are not returning accurate types
-    let lastType = "";
+        document.querySelector("main h1").innerHTML = wordData.message;
+        document.querySelector("main ol").innerHTML = "";
 
-    // use a for-of loop to iterate through all the definitions (even if there is only one)
-    for (oneDef of allDefs) {
+    } else {
 
-        // create a new list item object
-        let newDef = document.createElement("li");
+        // word exists, update page
 
-        // create a new span to go inside the list item, and fill it with the word type
-        let newType = document.createElement("span");
-        let wordType = "";
-        if (oneDef.partOfSpeech == null) {
-            wordType = lastType;
-        } else {
-            wordType = oneDef.partOfSpeech;
-            lastType = wordType;
+        // insert word from API into page
+        document.querySelector("main h1").innerHTML = wordData.word;
+
+        // get handle for the UL tag
+        let definitionUL = document.querySelector("main ol");
+
+        // clear inside of UL tag
+        definitionUL.innerHTML = "";
+
+        let priorPartOfSpeech = "";
+
+        // loop through definition results and create new LI/SPAN tags
+        for (i = 0; i < wordData.definitions.length; i++) {
+
+            // this is the technically correct but long way of adding new HTML tags to the DOM
+
+            // create new LI and SPAN tags
+            let newLI = document.createElement("li");
+            let newSpan = document.createElement("span");
+
+            // manage part of speech
+            if (wordData.definitions[i].partOfSpeech == null) {
+                wordData.definitions[i].partOfSpeech = priorPartOfSpeech;
+            }
+            newSpan.innerHTML = "(" + wordData.definitions[i].partOfSpeech + ")";
+            priorPartOfSpeech = wordData.definitions[i].partOfSpeech;
+            
+            // put part of speech span tag inside LI tag
+            newLI.append(newSpan);
+
+            // adds the definition to the internal HTML in the LI tag
+            newLI.innerHTML += wordData.definitions[i].definition;
+
+            // puts the LI tag inside the UL 
+            definitionUL.append(newLI);
+
+            // short but hacky way of adding new HTML tags:
+            // let newDef = "<li><span>" + wordData.definitions[i].partOfSpeech + "</span> " + wordData.definitions[i].definition + "</li>";
+            // definitionUL.innerHTML += newDef;
+
         }
-        newType.innerHTML = "(" + wordType + ") ";
-
-        // put the span inside the list item
-        newDef.appendChild(newType);
-
-        // append the definition to the list item after the span
-        newDef.innerHTML += oneDef.definition;
-
-        // add the list item (with the span inside it) into the #definitions <ul> list 
-        document.querySelector("#definitions").appendChild(newDef);
     }
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
 
-    // start the display with the word "dictionary"
+    // start with word "dictionary"
     getWord("dictionary");
 
-    // add "submit" event listener to the form (not the submit button!)
+    // add event listener to the form to catch submits
     document.querySelector("#wordSearch").addEventListener("submit", function(event) {
 
-        // get word from the form
         let wordToFind = document.querySelector("#wordToFind").value;
-        if (wordToFind != "") {
-            getWord(wordToFind);
-        } else {
-            getWord("blank");
-        }
+        getWord(wordToFind);
 
-        // stop form from submitting to server, we'll process it entirely in JS/AJAX
-    	event.preventDefault();
+        // stop form from trying to submit to the server
+        event.preventDefault();
 
     });
 

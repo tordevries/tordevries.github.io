@@ -17,10 +17,18 @@ main {
     padding: 20px;
 } 
 
+li {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+li span {
+    font-style: italic;
+    margin-right: 0.5em;
+}
+
 #searchForm {
-    width: 100%;
-    margin-bottom: 40px;
     overflow: auto;
+    margin-bottom: 40px;
 }
 
 #searchForm input,
@@ -43,12 +51,4 @@ main {
     float: right;
     border-left: 0;
     border-radius: 0 10px 10px 0;
-}
-
-li {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-li span {
-    font-style: italic;
 }
