@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modal Madlibs + Cookies + jQuery</title>
+
+	<!-- external CSS and JavaScript -->
+	<link rel="stylesheet" href="styles.css" media="all">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+	<script src="scripts.js" defer></script>
+
+</head>
+<body>
+
+	<div id="modalCover" class="hidden"></div>
+
+	<div id="modalPopup" class="hidden">
+		<form id="madlibsForm">
+
+			<p><label for="adjective1">Adjective:</label> <input type="text" name="adjective1" id="adjective1"></p>
+
+			<p><label for="adjective2">Adjective:</label> <input type="text" name="adjective2" id="adjective2"></p>
+
+			<p><label for="noun1">Noun:</label> <input type="text" name="noun1" id="noun1"></p>
+
+			<p><label for="noun2">Noun:</label> <input type="text" name="noun2" id="noun2"></p>
+
+			<p>Year: <select name="year1" id="year1">
+				<option value="10000">10,000</option>
+				<option value="2030">2030</option>
+				<option value="500">500</option>
+			</select></p>
+
+			<p><input type="checkbox" name="extra1" id="extra1"> <label for="extra1">Include extra sentence?</label></p>
+
+			<button type="submit" id="showModal">Submit Data</button>
+
+		</form>
+	</div>
+
+	<h1>MadLibs</h1>
+
+	<p id="madlibOutput">Click "Edit" to proceed.</p>
+
+	<button id="setMadlib">Edit Madlib</button>
+
+</body>
+</html>
+
