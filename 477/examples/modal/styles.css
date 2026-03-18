@@ -1,0 +1,55 @@
+/* styles for modal example */
+
+body {
+	font-family: Arial, sans-serif;
+	color: white;
+	line-height: 2em;
+	background-image: url('jr-korpa-9XngoIpxcEo-unsplash.jpg');
+	background-size: cover;
+    background-position: center center;
+}
+
+p, li {
+	font-size: 150%;
+}
+
+p.credit {
+	font-size: 50%;
+	font-style: italic;
+}
+
+a {
+	color: white;
+}
+
+#modalCover {
+	position: fixed;
+    display: none; /* hidden by default */
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(255,255,255,0.7);
+	backdrop-filter: blur(8px);
+}
+
+#modalPopup {
+	position: fixed;
+    display: none; /* hidden by default */
+	width: 50vw;
+	height: 60vh;
+	left: 25vw;
+	top: 20vh;
+	padding: 1em;
+	background-color: white;
+	border: 1px solid gray;
+	color: black;
+}
+
+#modalCover.show,
+#modalPopup.show {
+	display: block;
+}
+
+
+
