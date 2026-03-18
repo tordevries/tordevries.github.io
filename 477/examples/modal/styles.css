@@ -1,5 +1,6 @@
 /* styles for modal example */
 
+/* body default */
 body {
 	font-family: Arial, sans-serif;
 	color: white;
@@ -7,6 +8,14 @@ body {
 	background-image: url('jr-korpa-9XngoIpxcEo-unsplash.jpg');
 	background-size: cover;
     background-position: center center;
+}
+
+/* freeze the body when a modal appears by giving it the window's
+   width and height, with overflow hidden */
+body.showModal {
+    height: 100vh; 
+	width: 100vw;
+    overflow: hidden;
 }
 
 p, li {
@@ -22,8 +31,12 @@ a {
 	color: white;
 }
 
+#modalButton {
+	float: right;
+}
+
 #modalCover {
-	position: fixed;
+	position: fixed; /* positioned relative to the window */
     display: none; /* hidden by default */
 	top: 0;
 	left: 0;
@@ -31,24 +44,29 @@ a {
 	height: 100vh;
 	background-color: rgba(255,255,255,0.7);
 	backdrop-filter: blur(8px);
+	z-index: 1000; /* make sure it appears over everything except... */
 }
 
 #modalPopup {
-	position: fixed;
+	position: fixed; /* positioned relative to the window */
     display: none; /* hidden by default */
 	width: 50vw;
 	height: 60vh;
 	left: 25vw;
-	top: 20vh;
+	top: 15vh;
 	padding: 1em;
+	border-radius: 20px;
 	background-color: white;
 	border: 1px solid gray;
+	box-shadow: 0 10px 10px gray;
 	color: black;
+	z-index: 1001; /* make sure it appears over everything including #modalCover */
 }
 
-#modalCover.show,
-#modalPopup.show {
-	display: block;
+/* when the body tag has the class "showModal" then display the modals! */
+body.showModal #modalCover,
+body.showModal #modalPopup {
+	display: block; /* override the less specific display: none, above */
 }
 
 

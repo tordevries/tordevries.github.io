@@ -1,9 +1,10 @@
 // javascript for modal example
 
 
+/* add class to body if a modal is supposed to appear 
+   so body.showModal styles get applied */
 function toggleModal() {
-	document.querySelector("#modalCover").classList.toggle("show");
-	document.querySelector("#modalPopup").classList.toggle("show");
+	document.body.classList.toggle("showModal");
 }
 
 
@@ -11,12 +12,12 @@ function toggleModal() {
 document.addEventListener("DOMContentLoaded", function() {
 
 	// button to show modal
-	document.querySelector("#showModal").addEventListener("click", toggleModal);
+	document.querySelector("#modalButton").addEventListener("click", toggleModal);
 
-	// button to hide modal
+	// button in the modal to hide it
 	document.querySelector("#modalPopup button").addEventListener("click", toggleModal);
 
-	// button to hide modal
+	// also hide modal when clicking on background cover
 	document.querySelector("#modalCover").addEventListener("click", toggleModal);
 
 });
