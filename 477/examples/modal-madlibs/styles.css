@@ -13,18 +13,23 @@ input, select, option {
 	font-size: 90%;
 }
 
+/* blur and dim the background with a cover */
 #modalCover {
-	position: absolute;
+	position: fixed;
+	display: none; /* hidden by default */
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
 	background-color: rgba(255,255,255,0.7);
 	backdrop-filter: blur(8px);
+	z-index: 1000;
 }
 
+/* pop-up window */
 #modalPopup {
-	position: absolute;
+	position: fixed;
+	display: none; /* hidden by default */
 	width: 30vw;
 	height: 60vh;
 	left: 35vw;
@@ -33,10 +38,12 @@ input, select, option {
 	background-color: white;
 	border: 1px solid gray;
 	color: black;
+	z-index: 1001;
 }
 
-.hidden {
-	display: none;
+body.showModal #modalCover,
+body.showModal #modalPopup {
+	display: block;
 }
 
 
