@@ -40,6 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	});
 
+	document.querySelector("#adjective1").addEventListener("focus", function() {
+		console.log("focused!");
+	});
+	document.querySelector("#adjective1").addEventListener("blur", function() {
+		console.log("blurred!");
+	});
+
 	// button to show/hide modal
 	let hideIt = document.querySelector("#setMadlib");
 	hideIt.addEventListener("click", toggleModal);
