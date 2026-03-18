@@ -4,22 +4,22 @@
 body {
 	font-family: Arial, sans-serif;
 	color: white;
-	line-height: 2em;
 	background-image: url('jr-korpa-9XngoIpxcEo-unsplash.jpg');
 	background-size: cover;
     background-position: center center;
+	padding: 5em;
 }
 
 /* freeze the body when a modal appears by giving it the window's
    width and height, with overflow hidden */
 body.showModal {
-    height: 100vh; 
-	width: 100vw;
+    height: 100%; 
     overflow: hidden;
 }
 
 p, li {
-	font-size: 150%;
+	font-size: 2rem;
+	line-height: 1.5em;
 }
 
 p.credit {
@@ -33,6 +33,8 @@ a {
 
 #modalButton {
 	float: right;
+	font-size: 2em;
+	margin: 1em 0 2em 2em;
 }
 
 #modalCover {
