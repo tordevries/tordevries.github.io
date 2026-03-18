@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// handle the modal form's submit event
 	let formToSubmit = document.querySelector("#madlibsForm");
-	formToSubmit.addEventListener("submit", function(e) {
+	formToSubmit.addEventListener("submit", function(event) {
 
-		e.preventDefault(); // don't let form submit to server
+		event.preventDefault(); // don't let form submit to server
 
 		// examine form code values
 		let adj1 = document.querySelector("#adjective1").value;
@@ -38,13 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		toggleModal();
 
-	});
-
-	document.querySelector("#adjective1").addEventListener("focus", function() {
-		console.log("focused!");
-	});
-	document.querySelector("#adjective1").addEventListener("blur", function() {
-		console.log("blurred!");
 	});
 
 	// button to show/hide modal
