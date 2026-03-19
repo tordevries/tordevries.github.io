@@ -1,10 +1,14 @@
-// function for getting AJAX data from a URL as JSON
-// call with "await", as in:
-//
-// let someData = await getJsonData(url, options);
-//
+/*
+function for getting AJAX data from a URL as JSON, call with .then():
 
-async function getJsonData(url, options) {
+getData(url, options).then( function(result) { 
+    // code to operate on resulting JSON object 
+});
+
+
+*/
+
+async function getData(url, options) {
     try {
         const response = await fetch(url, options);
         if (response.ok) {

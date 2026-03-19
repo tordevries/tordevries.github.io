@@ -16,9 +16,14 @@ const options = {
 async function getData(url, opts) {
     try {
         const response = await fetch(url, opts);
-        const result = await response.json();
+        if (response.ok) {
+            const result = await response.json();
+            doSomething(result);
+        } else {
+            throw(response.status);
+        }
         // do code with "result"
-        doSomething(result);
+        
     } catch (error) {
         console.error(error);
     }
