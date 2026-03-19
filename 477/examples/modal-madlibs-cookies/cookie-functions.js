@@ -29,3 +29,18 @@ function checkCookie(cookieName) {
   let data = getCookie(cookieName);
   return (data != ""); 
 }
+
+// delete an individual cookie by setting it to yesterday's date
+function deleteCookie(cookieName) {
+  setCookie(cookieName, "delete", -1);
+}
+
+// delete all cookies by looping through the cookie string as array
+function deleteAllCookies() {
+    document.cookie.split(';').forEach(oneCookie => {
+      while (oneCookie.charAt(0) == ' ') { // loop to remove spaces from beginning
+        oneCookie = oneCookie.substring(1);
+      }
+      deleteCookie(oneCookie);
+    });
+}
