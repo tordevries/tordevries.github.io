@@ -1,6 +1,6 @@
 // javascript to load a word from a dictionary API
 
-// copied from RapidAPI
+// copied and adapted from RapidAPI
 const urlPart1 = 'https://wordsapiv1.p.rapidapi.com/words/';
 const urlPart2 = '/definitions';
 const options = {
