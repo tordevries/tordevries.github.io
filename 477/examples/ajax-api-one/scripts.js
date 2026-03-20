@@ -22,8 +22,6 @@ async function getData(url, opts) {
         } else {
             throw(response.status);
         }
-        // do code with "result"
-        
     } catch (error) {
         console.error(error);
     }
