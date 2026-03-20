@@ -20,20 +20,20 @@ which then calls updateGeoDisplay().
 
 */
 
-// configure options for JS device GPS access: high accuracy, 5-second timeout, no cached location data
+// configure options for device GPS access: high accuracy, 5-second timeout, no cached location data
 const gpsDeviceOptions = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0,
 };
 
-// run this if device GPS request approved and succesful
+// run this function if device GPS request approved and succesful
 function gpsDeviceSuccess(data) {
     // lat and long are in data.coords.latitude and data.coords.longitude
     updateGeoDisplay("device gps", data.coords.latitude, data.coords.longitude);
 }
 
-// run this if device GPS request denied or failed
+// run this function if device GPS request denied or failed
 function gpsDeviceFailure(error) {
     console.warn("Error #" + error.code + ": " + error.message); // output warning to console
     ipAPI(); // initiate backup geolocation by ip number
