@@ -38,7 +38,7 @@ function checkCookie(cname) {
 // toggle modal display by toggling class on body, which will trigger
 // css styles around body.showModal 
 function toggleModal() {
-	document.body.classList.toggle("showModal");
+	$("body").toggleClass("showModal");
 }
 
 
